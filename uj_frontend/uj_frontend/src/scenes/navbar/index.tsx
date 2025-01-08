@@ -7,7 +7,8 @@ const Navbar = (props: Props) => {
   const flexBetween = "flex items-center justify-between";
   
   
-  return <nav>
+  return (
+  <nav>
     <div
     className={`${flexBetween} fixed top-0 z-30 w-full py-6`}
     >
@@ -19,7 +20,7 @@ const Navbar = (props: Props) => {
      {/*jobb oldal*/}
      <div className={`${flexBetween} w-full`}>
         <div className={`${flexBetween} gap-8 text-sm`}>
-            
+
         </div>
         </div>
         <div>
