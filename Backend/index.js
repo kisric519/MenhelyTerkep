@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config()
 
@@ -7,17 +8,27 @@ app.use(bodyParser.json());
 
 //utvonalak importalasa
 const users = require('./routes/users');
+const menhelyek = require('./routes/menhelyek');
+const admin = require('./routes/admin');
 
 //utvonalak hasznalata
 app.use('/users', users);
+app.use('/menhelyek', menhelyek);
+app.use('/admin', admin);
 
+//Adatbázis kapcsolat
+async function connectToDatabase() {
+  try {
+    await mongoose.connect(process.env.DB_CONNECTION);
+    console.log('Sikeres adatbázis kapcsolódás');
+  } catch (error) {
+    console.error('Sikertelen adatbézis kapcsolat: ', error);
+  }
+}
+connectToDatabase();
+
+//Szerver létrehozása
 const port = process.env.API_PORT;
 app.listen(port, () => {
   console.log(`Szerver fut a ${port} porton!`);
 });
-
-
-const mongoose = require('mongoose');
-const mongoDBURL = process.env.MONGO_URI;
-
-mongoose.connect(mongoDBURL, {}).then(() => { console.log("Az adatbázis kapcsolat létrejött sikeresen") }).catch((err) => { console.log("Hiba az adatbázis kapcsolódáskor") })
