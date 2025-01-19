@@ -2,16 +2,25 @@ header{
     display: flex;
     align-items: center;
     box-shadow: 0px 0px 20px rgba(72, 72, 72, 0.224);
-}
-
-header .logo{
-    width: 100px;
+    justify-content: space-between;
+    padding-right: 20px;
 }
 
 header nav{
     display: flex;
     gap: 20px;
 }
+
+header .mainnav{
+    display: flex;
+    justify-content: center;
+}
+
+header .logo{
+    width: 100px;
+}
+
+
 
 nav a{
     background-color: rgb(34, 34, 34);
@@ -20,4 +29,9 @@ nav a{
     border-radius: 5px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
+}
+
+nav .regbutton{
+    background-color: transparent;
+    color: rgb(34, 34, 34);
 }

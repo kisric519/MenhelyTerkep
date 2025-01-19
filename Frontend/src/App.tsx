@@ -1,8 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //Oldalak listája
-import Home from './scenes/Home';
-import About from './scenes/About';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Menhelyek from './Pages/Menhelyek';
+import RegisterMenhely from './Pages/Regisztraciok/RegisterMenhely';
+import RegisterFelhasznalo from './Pages/Regisztraciok/RegisterFelhasznalo';
+import Login from './Pages/Regisztraciok/Login';
 
 function App() {
   return (
@@ -10,6 +14,10 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/rolunk' element={<About/>} />
+         <Route path='/menhelyek' element={<Menhelyek/>} />
+         <Route path='/regisztracio/menhely' element={<RegisterMenhely/>} />
+         <Route path='/regisztracio/felhasznalo' element={<RegisterFelhasznalo/>} />
+         <Route path='/bejelentkezes' element={<Login/>} />
        </Routes>
      </div>
   )

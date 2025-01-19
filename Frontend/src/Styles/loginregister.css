@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+}
+a{
+    text-align: center;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+.link-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bg{
+    background-color: rgb(34, 34, 34);
+    color: white;
+    border: none;
+}
+.bg:hover{
+    background-color: rgb(56, 56, 56);
+}
