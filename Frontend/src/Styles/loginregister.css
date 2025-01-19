@@ -24,3 +24,7 @@ a{
 .bg:hover{
     background-color: rgb(56, 56, 56);
 }
+
+.msgbox{
+    color: red;
+}

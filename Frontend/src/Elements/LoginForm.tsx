@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function FormComponent() {
+    const [message, setMessage] = useState('');
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+  const bejelentkezesBekuldese = async (e) => {
+    if (email == "" || password == "")
+    {
+        setMessage("Minden mezőt tölts ki!")
+    }
+
+    e.preventDefault();
+    try {
+      const response = await fetch(import.meta.env.VITE_API_URL+'/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: email,
+            password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        setMessage("Belső rendszer hiba!")
+      }
+
+      const result = await response.json();
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
-    <form>
+      <form onSubmit={bejelentkezesBekuldese}>
+        <span className='msgbox'>{message}</span>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">E-mail cím</label>
         <input
@@ -11,6 +46,8 @@ function FormComponent() {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="pelda@gmail.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="form-group">
@@ -20,6 +57,8 @@ function FormComponent() {
           className="form-control"
           id="exampleInputPassword1"
           placeholder="Jelszavad"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="form-check">
