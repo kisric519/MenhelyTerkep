@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -5,6 +6,7 @@ const app = express();
 require('dotenv').config()
 
 app.use(bodyParser.json());
+app.use(cors());
 
 //utvonalak importalasa
 const users = require('./routes/users');

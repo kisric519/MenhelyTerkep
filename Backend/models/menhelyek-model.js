@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const menhelyekModel = mongoose.Schema({
-    nev:{
+    menhelyneve:{
         type: String,
         default: "",
         required: true
@@ -21,7 +21,7 @@ const menhelyekModel = mongoose.Schema({
         default: "",
         required: true
     },
-    cim:{
+    menhelycime:{
         type: String,
         default: "",
         required: true

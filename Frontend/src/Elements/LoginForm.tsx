@@ -29,7 +29,7 @@ function FormComponent() {
         setMessage("Belső rendszer hiba!")
       }
 
-      const result = await response.json();
+      await response.json();
     } catch (error) {
       console.error('Error:', error);
     }

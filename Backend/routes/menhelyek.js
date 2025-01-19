@@ -5,13 +5,19 @@ const Menhely = require('../models/menhelyek-model');
 //Menhely regisztráció
 router.post('/regisztracio', async (req, res) => {
     try{
-          const menhely = req.body
+        const menhely = req.body
+        console.log(menhely)
+        const letezoMenhely = await Menhely.findOne({ email: menhely.email });
+        if (letezoMenhely) {
+          return res.status(400).json({ hiba: 'Ez az email cím már regisztrálva van.' });
+        }
+
           const menhelymodel = await Menhely.create({  
-                nev:menhely.nev,
+                menhelyneve:menhely.menhelyneve,
                 email:menhely.email,
                 telefonszam:menhely.telefonszam,
                 jelszo:menhely.jelszo,
-                cim:menhely.cim,
+                menhelycime:menhely.menhelycime,
                 oldal_link:menhely.oldal_link,
                 leiras:menhely.leiras
           });
