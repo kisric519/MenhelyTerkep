@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace MenhelyTerkepAdmin
 {
@@ -24,5 +26,59 @@ namespace MenhelyTerkepAdmin
 		{
 			InitializeComponent();
 		}
-	}
+
+        private async void Login_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageTextBlock.Text = "Kérlek, töltsd ki az összes mezőt!";
+                return;
+            }
+
+            bool isAuthenticated = await AuthenticateUserAsync(username, password);
+
+            if (isAuthenticated)
+            {
+                ShowMainContent();
+            }
+            else
+            {
+                MessageTextBlock.Text = "Hibás felhasználónév vagy jelszó.";
+            }
+        }
+
+        private async Task<bool> AuthenticateUserAsync(string username, string password)
+        {
+            var client = new HttpClient();
+            var url = "http://localhost:3333/admin/bejelentkezes";
+
+            var loginData = new { felhasznalonev = username, jelszo = password };
+            var json = JsonConvert.SerializeObject(loginData);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                HttpResponseMessage response = await client.PostAsync(url, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt: " + ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return false;
+        }
+
+        private void ShowMainContent()
+        {
+            LoginPanel.Visibility = Visibility.Collapsed; 
+            MainContentPanel.Visibility = Visibility.Visible;
+        }
+    }
 }

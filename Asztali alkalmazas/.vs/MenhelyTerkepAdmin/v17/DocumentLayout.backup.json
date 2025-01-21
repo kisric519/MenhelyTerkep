@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|c:\\users\\pc\\documents\\github\\menhelyterkep\\asztali alkalmazas\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAADkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T14:45:50.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-21T14:45:42.283Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

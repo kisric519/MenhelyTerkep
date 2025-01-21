@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Menhely = require('../models/menhelyek-model');
+const Adminok = require('../models/adminok-model');
+const bcrypt = require('bcrypt');
 
 //Egy menhely jóváhagyása
 router.put('/menhelyek/jovahagy/:menhelyid', async (req, res) => {
@@ -41,5 +43,48 @@ router.get('/jovahagyatlanok', async (req, res) => {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
 });
+
+//ADMIN fiók bejelntkezes
+router.post('/bejelentkezes', async (req, res) => {
+    const adatok = req.body;
+    const username = adatok.felhasznalo
+    const userpass = adatok.jelszo
+    const user = await Adminok.findOne({ username });
+console.log(adatok)
+    if (user && (await bcrypt.compare(userpass, user.jelszo))) {
+        res.send({user:user, sikeres:true});
+        console.log("Sikeres admin belepes")
+    } else{
+        res.status(500).json({msg:"Hibás email cím vagy jelszó!", sikeres: false});
+        console.log("Sikertelen admin belepes")
+    }
+    try {
+        
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message, sikeres:false });
+    }
+});
+
+//ADMIN regisztráció
+router.post('/regisztracio', async (req, res) => {
+    try {
+        const felhasznalo = req.body;
+
+        const salt = await bcrypt.genSalt(10);
+        const titkositottJelszo = await bcrypt.hash(felhasznalo.jelszo, salt);
+
+        const felhasznalomodel = await Adminok.create({
+            felhasznalonev: felhasznalo.felhasznalonev,
+            jelszo: titkositottJelszo
+        });
+
+        let ujfelhasznalo = await felhasznalomodel.save();
+        res.json(ujfelhasznalo);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ hiba: 'Hiba történt a regisztráció során.' });
+    }
+});
+
 
 module.exports = router
