@@ -31,4 +31,25 @@ router.post('/regisztracio', async (req, res) => {
     }
 });
 
+//Bejelentkezés
+router.post('/bejelentkezés', async (req, res) => {
+    try {
+        const adatok = req.body;
+        const useremail = adatok.email
+        const userpass = adatok.jelszo
+        const user = await Felhasznalok.findOne({ useremail });
+
+        if (user && (await bcrypt.compare(userpass, user.jelszo))) {
+            res.send({user:user});
+        } else{
+            res.send({msg:"Hibás email cím vagy jelszó!"});
+        }
+
+        res.json(bejelentkezes);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ hiba: 'Hiba történt a bejelentkezés során.' });
+    }
+});
+
 module.exports = router
