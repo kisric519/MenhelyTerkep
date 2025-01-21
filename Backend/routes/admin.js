@@ -38,7 +38,16 @@ router.delete('/menhelyek/torles/:menhelyid', async (req, res) => {
 router.get('/jovahagyatlanok', async (req, res) => {
     try {
         const jovahagyatlanokMenhelyek = await Menhely.find({ jovahagyva: false });
-        res.json(jovahagyatlanokMenhelyek);
+
+        const rendezettMenhelyek = jovahagyatlanokMenhelyek.map(shelter => {
+            return {
+                id: shelter._id.toString(),
+                ...shelter.toObject(),
+                _id: undefined, 
+            };
+        });
+
+        res.json(rendezettMenhelyek);
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
@@ -50,13 +59,11 @@ router.post('/bejelentkezes', async (req, res) => {
     const username = adatok.felhasznalo
     const userpass = adatok.jelszo
     const user = await Adminok.findOne({ username });
-console.log(adatok)
+
     if (user && (await bcrypt.compare(userpass, user.jelszo))) {
         res.send({user:user, sikeres:true});
-        console.log("Sikeres admin belepes")
     } else{
         res.status(500).json({msg:"Hibás email cím vagy jelszó!", sikeres: false});
-        console.log("Sikertelen admin belepes")
     }
     try {
         

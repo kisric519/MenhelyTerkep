@@ -18,7 +18,7 @@ router.post('/regisztracio', async (req, res) => {
                 telefonszam:menhely.telefonszam,
                 jelszo:menhely.jelszo,
                 menhelycime:menhely.menhelycime,
-                oldal_link:menhely.oldal_link,
+                oldallink:menhely.oldal_link,
                 leiras:menhely.leiras
           });
           let ujmenhely = await menhelymodel.save();

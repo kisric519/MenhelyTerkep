@@ -26,7 +26,7 @@ const menhelyekModel = mongoose.Schema({
         default: "",
         required: true
     },
-    oldal_link:{
+    oldallink:{
         type: String,
         default: "",
         required: true

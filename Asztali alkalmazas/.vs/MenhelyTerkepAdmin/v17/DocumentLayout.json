@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|c:\\users\\pc\\documents\\github\\menhelyterkep\\asztali alkalmazas\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|solutionrelative:mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|c:\\users\\pc\\documents\\github\\menhelyterkep\\asztali alkalmazas\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{443FDC1A-9AAB-4BFE-AA68-D9169B080AFD}|MenhelyTerkepAdmin.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -28,7 +28,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\pc\\Documents\\GitHub\\MenhelyTerkep\\Asztali alkalmazas\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAADkAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAowJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-21T14:45:50.091Z",
               "EditorCaption": ""
