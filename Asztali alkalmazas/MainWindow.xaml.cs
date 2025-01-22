@@ -29,7 +29,7 @@ namespace MenhelyTerkepAdmin
         public MainWindow()
 		{
 			InitializeComponent();
-            LoadShelters();
+            MenhelyekBetoltese();
         }
 
         private async void Login_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace MenhelyTerkepAdmin
 
             if (isAuthenticated)
             {
-                ShowMainContent();
+                MutasdATartalmat();
             }
             else
             {
@@ -58,7 +58,7 @@ namespace MenhelyTerkepAdmin
         private async Task<bool> AuthenticateUserAsync(string username, string password)
         {
             var client = new HttpClient();
-            var url = "http://localhost:3333/admin/bejelentkezes";
+            var url = $"{_apiUrl}/admin/bejelentkezes";
 
             var loginData = new { felhasznalonev = username, jelszo = password };
             var json = JsonConvert.SerializeObject(loginData);
@@ -80,14 +80,14 @@ namespace MenhelyTerkepAdmin
             return false;
         }
 
-        private void ShowMainContent()
+        private void MutasdATartalmat()
         {
             LoginPanel.Visibility = Visibility.Collapsed; 
             MainContentPanel.Visibility = Visibility.Visible;
         }
 
         //Fő content
-        private async void LoadShelters()
+        private async void MenhelyekBetoltese()
         {
             try
             {
@@ -115,7 +115,7 @@ namespace MenhelyTerkepAdmin
 
 
 
-        private async void ApproveShelter_Click(object sender, RoutedEventArgs e)
+        private async void Jovahagyas_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             string shelterId = button?.Tag as string;
@@ -126,7 +126,7 @@ namespace MenhelyTerkepAdmin
             }
         }
 
-        private async void DeleteShelter_Click(object sender, RoutedEventArgs e)
+        private async void Torles_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             string shelterId = button?.Tag as string;
@@ -143,7 +143,7 @@ namespace MenhelyTerkepAdmin
             HttpResponseMessage response = await _httpClient.PutAsync(endpoint, new StringContent("{}", Encoding.UTF8, "application/json"));
             if (response.IsSuccessStatusCode)
             {
-                LoadShelters(); 
+                MenhelyekBetoltese(); 
             }
             else
             {
@@ -157,7 +157,7 @@ namespace MenhelyTerkepAdmin
             HttpResponseMessage response = await _httpClient.DeleteAsync(endpoint);
             if (response.IsSuccessStatusCode)
             {
-                LoadShelters();
+                MenhelyekBetoltese();
             }
             else
             {
@@ -165,9 +165,9 @@ namespace MenhelyTerkepAdmin
             }
         }
 
-        private void RefreshShelters(object sender, RoutedEventArgs e)
+        private void Ujratoltes(object sender, RoutedEventArgs e)
         {
-            LoadShelters();
+            MenhelyekBetoltese();
         }
 
 

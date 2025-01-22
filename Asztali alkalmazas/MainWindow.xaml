@@ -33,8 +33,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button Content="Jóváhagyás" Click="ApproveShelter_Click" Tag="{Binding Id}" Margin="5"/>
-                                        <Button Content="Törlés" Click="DeleteShelter_Click" Tag="{Binding Id}" Margin="5"/>
+                                        <Button Content="Jóváhagyás" Click="Jovahagyas_Click" Tag="{Binding Id}" Margin="5"/>
+                                        <Button Content="Törlés" Click="Torles_Click" Tag="{Binding Id}" Margin="5"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -43,7 +43,7 @@
                 </ListView.View>
             </ListView>
 
-            <Button Content="Frissítés" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Padding="10,5" Click="RefreshShelters"/>
+            <Button Content="Frissítés" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Padding="10,5" Click="Ujratoltes"/>
         </StackPanel>
     </Grid>
 </Window>
