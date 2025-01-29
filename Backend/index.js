@@ -12,11 +12,13 @@ app.use(cors());
 const users = require('./routes/users');
 const menhelyek = require('./routes/menhelyek');
 const admin = require('./routes/admin');
+const naptar = require('./routes/naptar');
 
 //utvonalak hasznalata
 app.use('/users', users);
 app.use('/menhelyek', menhelyek);
 app.use('/admin', admin);
+app.use('/naptar', naptar);
 
 //Adatbázis kapcsolat
 async function connectToDatabase() {
