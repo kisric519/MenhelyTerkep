@@ -40,7 +40,7 @@ const menhelyekModel = mongoose.Schema({
         type: Boolean,
         default: false,
         required: true
-    },
+    }
 });
 
 module.exports = mongoose.model('Menhelyek', menhelyekModel);
