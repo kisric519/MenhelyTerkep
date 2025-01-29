@@ -45,6 +45,7 @@ const Home = () => {
             <h2>Most csatlakozott menhelyek</h2>
             <Menhelylista />   
         </section>  
+        <br />
         <section>
             <h2>Mivel foglalkozik a MenhelyTérkép?</h2>
             <div className="row">

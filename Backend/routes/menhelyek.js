@@ -6,7 +6,6 @@ const Menhely = require('../models/menhelyek-model');
 router.post('/regisztracio', async (req, res) => {
     try{
         const menhely = req.body
-        console.log(menhely)
         const letezoMenhely = await Menhely.findOne({ email: menhely.email });
         if (letezoMenhely) {
           return res.status(400).json({ hiba: 'Ez az email cím már regisztrálva van.' });
