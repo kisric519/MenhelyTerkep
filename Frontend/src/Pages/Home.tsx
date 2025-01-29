@@ -3,6 +3,9 @@ import Header from '../Elements/Header'
 import { Link } from "react-router-dom";
 import heroIMG from '../assets/kezdolapKutya.jpg'
 import '../Styles/home.css'
+import Menhelylista from '../Elements/MenhelyekListazasa';
+
+
 
 const Home = () => {
    return (
@@ -36,17 +39,7 @@ const Home = () => {
         </section>
         <section>
             <h2>Most csatlakozott menhelyek</h2>
-            <div className="row">
-                <div className="col-4">
-                       
-                </div>       
-                <div className="col-4">
-                
-                </div>       
-                <div className="col-4">
-                   
-                </div>       
-            </div>   
+            <Menhelylista />   
         </section>  
         <section>
             <h2>Mit csinálunk mi</h2>
