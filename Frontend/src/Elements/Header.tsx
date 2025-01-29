@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
 import '../Styles/header.css'
 import logo from '../assets/logo.png';
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+    const [shelterId, setShelterId] = useState<string | null>(null);
+
+    useEffect(() => {
+      setShelterId(localStorage.getItem("menhelyid"));
+    }, []);
+
+    const handleLogout = () => {
+      localStorage.removeItem("menhelyid");
+      setShelterId(null);
+    };
+
     return (
        <header>
             <img className="logo" src={logo} alt="" />
@@ -11,9 +23,17 @@ const Navbar = () => {
                 <Link to="/menhelyek">Menhelyek</Link>
                 <Link to="/rolunk">Rólunk</Link>
             </nav>
-            <nav>
-                <Link className="regbutton" to="/regisztracio/menhely">Regisztráció</Link>
-                <Link className="regbutton" to="/bejelentkezes">Bejelentkezés</Link>
+            <nav>{shelterId ? (
+                <div>
+                    <Link className="regbutton" to="/admin">Profilom</Link>
+                    <Link className="regbutton" to="" onClick={handleLogout}>Kijelentkezés</Link>
+                </div>
+            ) : (
+                <div>
+                    <Link className="regbutton" to="/regisztracio/menhely">Regisztráció</Link>
+                    <Link className="regbutton" to="/bejelentkezes">Bejelentkezés</Link>
+                </div>
+                )}
             </nav>
        </header>
    );

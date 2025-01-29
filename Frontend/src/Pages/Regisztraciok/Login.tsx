@@ -8,7 +8,7 @@ const Login = () => {
    return (
      <div>
         <Header />
-        <h1>Jelentkezz be a fiókodba</h1>
+        <h1>Jelentkezz be mint menhely</h1>
         <section>
             <div className="row">
                 <div className="col-4"></div>

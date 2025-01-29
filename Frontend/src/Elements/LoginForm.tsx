@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function FormComponent() {
+  const navigate = useNavigate();
     const [message, setMessage] = useState('');
 
     const [email, setEmail] = useState('')
@@ -14,14 +16,14 @@ function FormComponent() {
 
     e.preventDefault();
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL+'/users/login', {
+      const response = await fetch(`http://127.0.0.1:3333/menhelyek/bejelentkezes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             email: email,
-            password: password,
+            jelszo: password,
         }),
       });
 
@@ -29,7 +31,9 @@ function FormComponent() {
         setMessage("Belső rendszer hiba!")
       }
 
-      await response.json();
+      const data = await response.json();
+      localStorage.setItem("menhelyid", data.user._id);
+      navigate('/admin');
     } catch (error) {
       console.error('Error:', error);
     }

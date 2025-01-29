@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Menhely = require('../models/menhelyek-model');
+const bcrypt = require('bcrypt');
 
 //Menhely regisztráció
 router.post('/regisztracio', async (req, res) => {
@@ -10,12 +11,13 @@ router.post('/regisztracio', async (req, res) => {
         if (letezoMenhely) {
           return res.status(400).json({ hiba: 'Ez az email cím már regisztrálva van.' });
         }
-
+        const salt = await bcrypt.genSalt(10);
+        const titkositottJelszo = await bcrypt.hash(menhely.jelszo, salt);
           const menhelymodel = await Menhely.create({  
                 menhelyneve:menhely.menhelyneve,
                 email:menhely.email,
                 telefonszam:menhely.telefonszam,
-                jelszo:menhely.jelszo,
+                jelszo:titkositottJelszo,
                 menhelycime:menhely.menhelycime,
                 oldallink:menhely.oldal_link,
                 leiras:menhely.leiras
@@ -47,6 +49,27 @@ router.get('/:menhelyid', async (req, res) => {
         res.json(menhely);
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
+    }
+});
+
+//Bejelentkezés
+router.post('/bejelentkezes', async (req, res) => {
+    try {
+        const adatok = req.body;
+        const useremail = adatok.email
+        const userpass = adatok.jelszo
+
+        const user = await Menhely.findOne({ email:useremail });
+        console.log(user)
+        if (user && (await bcrypt.compare(userpass, user.jelszo))) {
+            res.send({user:user});
+        } else{
+            res.send({msg:"Hibás email cím vagy jelszó!"});
+        }
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ hiba: 'Hiba történt a bejelentkezés során.' });
     }
 });
 
