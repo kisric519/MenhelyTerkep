@@ -44,4 +44,40 @@ router.get('/esemenyek/:id', async (req, res) => {
     }
 });
 
+//Esemény törlése
+router.delete('/torles/:id', async (req, res) => {
+    try {
+        const toroltEsemeny = await Naptar.findByIdAndDelete(req.params.id);
+
+        if (!toroltEsemeny) {
+            return res.status(404).json({ message: "Nem található ilyen menhely!" });
+        }
+
+        res.json({ message: "Sikeres törlés!", toroltEsemeny });
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a törlés során!", error: err.message });
+    }
+});
+
+//Esemény frissítése
+router.put('/frissites/:esemenyid', async (req, res) => {
+    try {
+        const adatok = req.body
+
+        await Naptar.findOneAndUpdate(    
+            { _id: req.params.esemenyid},
+            { $set:
+                {
+                    esemenyneve: adatok.esemenyneve,
+                    datum: adatok.datum,
+                    leiras: adatok.leiras
+                }
+            }
+        );  
+        res.json({ message: "Sikeres esemény frissítés" });
+     }catch(err){
+        res.json({ message: err });
+     }
+});
+
 module.exports = router
