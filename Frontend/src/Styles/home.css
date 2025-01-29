@@ -31,6 +31,11 @@
    align-items: center;
 }
 
+.small-image{
+   width: 10px !important;
+    height: auto !important ;
+}
+
 .heroKep img{
    width: 90%;
    border-radius: 10px;
