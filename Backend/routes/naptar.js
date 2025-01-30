@@ -44,6 +44,17 @@ router.get('/esemenyek/:id', async (req, res) => {
     }
 });
 
+//Egy esemény lekérdezése
+router.get('/esemeny/:id', async (req, res) => {
+    try {
+        const esemenyid = req.params.id
+        const esemeny = await Naptar.findById(esemenyid);
+        res.json(esemeny);
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
+    }
+});
+
 //Esemény törlése
 router.delete('/torles/:id', async (req, res) => {
     try {

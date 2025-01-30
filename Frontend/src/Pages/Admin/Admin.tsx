@@ -21,7 +21,6 @@ const Admin = () => {
           navigate('/');
       } else {
         const response = await axios.get(`http://127.0.0.1:3333/menhelyek/${mentettMenhelyId}`);
-        console.log(response.data)
         setMenhelyAdatok(response.data);
       }
     };

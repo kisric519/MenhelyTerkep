@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-function FormComponent({ onSuccess }) {
+function FormComponent({ onSuccess, modositandoId }) {
   const [message, setMessage] = useState('');
-
   const [menhelyid, setMenhelyid] = useState('');
   const [esemenyNeve, setEsemenyNeve] = useState('');
   const [esemenyLeirasa, setEsemenyLeirasa] = useState('');
@@ -15,15 +15,18 @@ function FormComponent({ onSuccess }) {
   const apiurl = process.env.VITE_API_URL || "http://localhost:3333";
 
     useEffect(() => {
-    const fetchShelterData = async () => {
-      const kertmenhelyid = localStorage.getItem("menhelyid");
-      setMenhelyid(kertmenhelyid)
+      const fetchShelterData = async () => {
+      const response = await axios.get(`http://127.0.0.1:3333/naptar/esemeny/${modositandoId}`);
+        const data = response.data
+        console.log(data)
+      setDatum(data.datum)
+      setEsemenyNeve(data.esemenyneve)
+      setEsemenyLeirasa(data.leiras)
     };
     fetchShelterData();
-    }, []);
+    }, [modositandoId]);
 
   const ujEsemenyBekuldes = async (e) => {
-    console.log("Fut az esemeny")
     e.preventDefault();
 
     setMessage('');
@@ -33,8 +36,8 @@ function FormComponent({ onSuccess }) {
     }
 
     try{
-      const response = await fetch(apiurl+'/naptar/letrehozas', {
-        method: 'POST',
+      const response = await fetch(apiurl+'/naptar/frissites/'+modositandoId, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -47,8 +50,6 @@ function FormComponent({ onSuccess }) {
       });
 
       if(response.status == 200){
-        const res = await response.json();
-        console.log(res)
         onSuccess();
       }else if(!response.ok){
         setMessage("Belső rendszer hiba! ");
@@ -91,7 +92,7 @@ function FormComponent({ onSuccess }) {
       </div>
       <br />
       <button type="submit" className="btn btn-primary bg">
-        Mentem az eseményt
+        Módosítom az eseményt
       </button>
     </form>
   );
