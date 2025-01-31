@@ -3,15 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 function FormComponent() {
   const navigate = useNavigate();
-    const [message, setMessage] = useState('');
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const bejelentkezesBekuldese = async (e) => {
     if (email == "" || password == "")
     {
-        setMessage("Minden mezőt tölts ki!")
+      setMessage("Minden mezőt tölts ki!")
     }
 
     e.preventDefault();

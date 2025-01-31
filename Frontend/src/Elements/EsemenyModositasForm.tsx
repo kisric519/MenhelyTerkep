@@ -3,8 +3,8 @@ import axios from "axios";
 
 function FormComponent({ onSuccess, modositandoId }) {
   const [message, setMessage] = useState('');
-  const [menhelyid, setMenhelyid] = useState('');
   const [esemenyNeve, setEsemenyNeve] = useState('');
+  const [menhelyid, setMenhelyid] = useState('');
   const [esemenyLeirasa, setEsemenyLeirasa] = useState('');
   const [datum, setDatum] = useState(() => {
     const today = new Date();
@@ -12,18 +12,18 @@ function FormComponent({ onSuccess, modositandoId }) {
     return today.toISOString().split('T')[0];
   });
   
-  const apiurl = process.env.VITE_API_URL || "http://localhost:3333";
 
-    useEffect(() => {
-      const fetchShelterData = async () => {
+  useEffect(() => {
+      const esemenyLekerese = async () => {
       const response = await axios.get(`http://127.0.0.1:3333/naptar/esemeny/${modositandoId}`);
-        const data = response.data
-        console.log(data)
+      const data = response.data
+
       setDatum(data.datum)
       setEsemenyNeve(data.esemenyneve)
       setEsemenyLeirasa(data.leiras)
+      setMenhelyid(data.menhelyid)
     };
-    fetchShelterData();
+    esemenyLekerese();
     }, [modositandoId]);
 
   const ujEsemenyBekuldes = async (e) => {
@@ -36,7 +36,7 @@ function FormComponent({ onSuccess, modositandoId }) {
     }
 
     try{
-      const response = await fetch(apiurl+'/naptar/frissites/'+modositandoId, {
+      const response = await fetch('http://127.0.0.1:3333/naptar/frissites/'+modositandoId, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
