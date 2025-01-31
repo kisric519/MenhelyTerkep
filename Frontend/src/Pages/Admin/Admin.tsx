@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../../Elements/Header'
 import UjEsemeny from '../../Elements/UjEsemenyForm'
 import EsemenyListazas from '../../Elements/MenhelyEsemenyLista'
@@ -11,7 +10,6 @@ const Admin = () => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState("kezdolap");
     const [menhelyAdatok, setMenhelyAdatok] = useState(null);
-    const [ujEsemenyAblak, setUjEsemenyAblak] = useState(false);
 
     useEffect(() => {
     const fetchShelterData = async () => {
@@ -51,7 +49,7 @@ const Admin = () => {
 
       <div className="mt-4 p-4 rounded-lg bg-white">
         {activeTab === "kezdolap" && <Kezdolap shelterData={menhelyAdatok} />}
-        {activeTab === "esemenyek" && <Esemenyek setUjEsemenyAblak={setUjEsemenyAblak} ujEsemenyAblak={ujEsemenyAblak} />}
+        {activeTab === "esemenyek" && <Esemenyek />}
         {activeTab === "galeria" && <Galeria />}
       </div>
     </div>
