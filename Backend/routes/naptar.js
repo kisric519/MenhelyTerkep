@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const Menhely = require('../models/menhelyek-model');
 const Naptar = require('../models/naptar-model');
 
 

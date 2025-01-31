@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenhelyTerkepAdmin"
         mc:Ignorable="d"
-        Title="MenhelyTérkép ADMIN" Height="800" Width="1600">
+        Title="MenhelyTérkép ADMIN" Height="800" Width="1600"
+        Icon="logo.png"
+        >
     <Grid>
         <StackPanel Margin="20" x:Name="LoginPanel">
             <TextBlock Text="Felhasználónév:" Margin="0,0,0,5"/>

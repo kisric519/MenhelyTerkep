@@ -71,6 +71,6 @@ C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\M
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.Properties.Resources.resources
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.csproj.GenerateResource.cache
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.csproj.CoreCompileInputs.cache
-C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyT.CCA47BC0.Up2Date
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.exe
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.pdb
+C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.csproj.CopyComplete
