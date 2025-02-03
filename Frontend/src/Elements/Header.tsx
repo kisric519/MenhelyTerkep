@@ -7,11 +7,11 @@ const Navbar = () => {
     const [shelterId, setShelterId] = useState<string | null>(null);
 
     useEffect(() => {
-      setShelterId(localStorage.getItem("menhelyid"));
+      setShelterId(localStorage.getItem('belepisadat'));
     }, []);
 
     const handleLogout = () => {
-      localStorage.removeItem("menhelyid");
+      localStorage.removeItem('belepisadat');
       setShelterId(null);
     };
 

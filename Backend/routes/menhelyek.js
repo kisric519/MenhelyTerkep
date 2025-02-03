@@ -68,7 +68,7 @@ router.post('/bejelentkezes', async (req, res) => {
 
         const user = await Menhely.findOne({ email:useremail });
         if (user && (await bcrypt.compare(userpass, user.jelszo))) {
-            res.send({user:user});
+            res.send(user);
         } else{
             res.send({msg:"Hibás email cím vagy jelszó!"});
         }

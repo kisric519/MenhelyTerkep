@@ -31,7 +31,8 @@ function FormComponent() {
       }
 
       const data = await response.json();
-      localStorage.setItem("menhelyid", data.user._id);
+      const id = await data._id
+      await localStorage.setItem('belepisadat', id);
       navigate('/admin');
     } catch (error) {
       console.error('Error:', error);

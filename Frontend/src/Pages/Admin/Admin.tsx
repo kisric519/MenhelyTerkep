@@ -13,10 +13,11 @@ const Admin = () => {
 
     useEffect(() => {
     const fetchShelterData = async () => {
-      const mentettMenhelyId = localStorage.getItem("menhelyid");
+      const mentettMenhelyId = await localStorage.getItem('belepisadat');
+      console.log(mentettMenhelyId)
       if (!mentettMenhelyId) {
           console.log("Nem vagy bejelentkezve")
-          navigate('/');
+          //navigate('/');
       } else {
         const response = await axios.get(`http://127.0.0.1:3333/menhelyek/${mentettMenhelyId}`);
         setMenhelyAdatok(response.data);
@@ -61,7 +62,17 @@ const Kezdolap = ({ shelterData }: { shelterData: any }) => (
         <h2>Menhely adatai</h2>
         <section>
             {shelterData ? (
-                <div>
+        <div>
+          <div>
+            Logód:
+            {shelterData.logo && (
+            <img
+              src={shelterData.logo}
+              alt={`Logo of ${shelterData.menhelyneve}`}
+              className="logo"
+            />
+          )}
+          </div>
                     <p>Menhely Neve: {shelterData.menhelyneve}</p>
                     <p>Menhely Címe: {shelterData.menhelycime}</p>
                     <p>Menhely Weboldala: {shelterData.oldallink}</p>

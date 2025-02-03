@@ -16,7 +16,7 @@ function FormComponent({ onSuccess }) {
 
     useEffect(() => {
     const fetchShelterData = async () => {
-      const kertmenhelyid = localStorage.getItem("menhelyid") || "";
+      const kertmenhelyid = localStorage.getItem('belepisadat') || "";
       setMenhelyid(kertmenhelyid)
     };
     fetchShelterData();

@@ -11,7 +11,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   
     useEffect(() => {
       const esemenyekLekerese = async () => {
-      const mentettMenhelyId = localStorage.getItem("menhelyid");
+      const mentettMenhelyId = localStorage.getItem('belepisadat');
       try {
         const response = await fetch("http://127.0.0.1:3333/naptar/esemenyek/"+mentettMenhelyId);
         const data = await response.json();
@@ -58,7 +58,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   
 
   const esemenyekLekerese = async () => {
-      const mentettMenhelyId = localStorage.getItem("menhelyid");
+      const mentettMenhelyId = localStorage.getItem('belepisadat');
       try {
         const response = await fetch("http://127.0.0.1:3333/naptar/esemenyek/"+mentettMenhelyId);
         const data = await response.json();
