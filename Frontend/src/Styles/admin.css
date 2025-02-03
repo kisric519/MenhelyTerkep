@@ -41,3 +41,17 @@
    border-radius: 20px;
    box-shadow: 0px 0px 20px black;
 }
+
+
+.galeria{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+
+.galeriaElem{
+   border-radius: 5px;
+   max-width: 300px;
+   aspect-ratio: 1/1;
+}

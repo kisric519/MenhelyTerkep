@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import '../../Styles/admin.css'
 import { useNavigate } from 'react-router-dom';
+import img from '../../assets/kezdolapKutya.jpg'
+
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -16,8 +18,7 @@ const Admin = () => {
       const mentettMenhelyId = await localStorage.getItem('belepisadat');
       console.log(mentettMenhelyId)
       if (!mentettMenhelyId) {
-          console.log("Nem vagy bejelentkezve")
-          //navigate('/');
+          navigate('/');
       } else {
         const response = await axios.get(`http://127.0.0.1:3333/menhelyek/${mentettMenhelyId}`);
         setMenhelyAdatok(response.data);
@@ -120,12 +121,16 @@ const Esemenyek = () => {
   )
 };
 const Galeria = () => (
-    <div>
-        <h2>Galéria</h2>
-        <section>
-            Üres a galéria
-        </section>
+  <div>
+    <div className='d-flex gap-2'>
+      <h2>Galéria</h2>
+      <button className='ujgomb' onClick={() => (null)}>+ Kép</button>
     </div>
+    <br />
+    <section className='galeria'>
+      <img className='galeriaElem' src={img} />
+    </section>
+  </div>
 );
 
 export default Admin

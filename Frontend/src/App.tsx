@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/Home';
 import Admin from './Pages/Admin/admin';
 import About from './Pages/About';
+import Menhely from './Pages/Menhely';
 import Menhelyek from './Pages/Menhelyek';
 import RegisterMenhely from './Pages/Regisztraciok/RegisterMenhely';
 import RegisterFelhasznalo from './Pages/Regisztraciok/RegisterFelhasznalo';
@@ -20,6 +21,7 @@ function App() {
          <Route path='/regisztracio/menhely' element={<RegisterMenhely/>} />
          <Route path='/regisztracio/felhasznalo' element={<RegisterFelhasznalo/>} />
          <Route path='/bejelentkezes' element={<Login/>} />
+         <Route path='/menhely/:id' element={<Menhely/>} />
        </Routes>
      </div>
   )

@@ -44,7 +44,7 @@ const MenhelyLista = () => {
           )}
           <h2 className="text-xl font-bold text-gray-800 mb-2">{menhely.menhelyneve}</h2>
           <p className="text-gray-600">{menhely.leiras}</p>
-          <button className="gombok">Részletek</button>
+          <Link to={`menhely/${menhely._id}`} className="gombok">Részletek</Link>
         </div>
       ))}
     </div>
