@@ -57,3 +57,8 @@
    border: black 1px;
    border-radius: 5px;
 }
+
+.logo{
+   width: 25%;
+   max-width: 150px;
+}

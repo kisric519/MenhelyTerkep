@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function FormComponent() {
+  const [file, setFiles] = useState<File | null>(null);
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,47 +11,50 @@ function FormComponent() {
   const [tel, setTel] = useState('');
   const [oldallink, setOldallink] = useState('');
   const [leiras, setLeiras] = useState('');
-  const apiurl = process.env.VITE_API_URL || "http://localhost:3333";
   const navigate = useNavigate();
+
+  const fajlokEllenorzese = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0];
+    if (selectedFile) {
+      setFiles(selectedFile);
+    }
+  };
+
 
   const regisztracioBekuldese = async (e) => {
     e.preventDefault();
 
-    setMessage('');
-    if (email == "" || password == "" || menhelyneve == "" || menhelycime == "" || tel == ""
-      || oldallink == "" || leiras == "")
-    {
-      setMessage("Minden mezőt tölts ki!");
+    const formData = new FormData();
+    formData.append('menhelyneve', menhelyneve);
+    formData.append('menhelycime', menhelycime);
+    formData.append('oldal_link', oldallink);
+    formData.append('leiras', leiras);
+    formData.append('email', email);
+    formData.append('jelszo', password);
+    formData.append('telefonszam', tel);
+    if (file) {
+      formData.append('image', file); // Kép hozzáadása
     }
 
-    try{
-      const response = await fetch(apiurl+'/menhelyek/regisztracio', {
+    try {
+      const response = await fetch('http://localhost:3333/menhelyek/regisztracio', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          menhelyneve: menhelyneve,
-          menhelycime: menhelycime,
-          oldal_link: oldallink,
-          leiras: leiras,
-          email: email,
-          jelszo: password,
-          telefonszam: tel,
-        }),
+        body: formData,
       });
 
-      if(response.status == 200){
+      if (response.status === 200) {
         const res = await response.json();
-        console.log(res)
+        console.log(res);
         navigate('/');
-      }else if(response.status == 400){
+      } else if (response.status === 400) {
         setMessage("Ez az email cím már használatban van!");
-      }else if(!response.ok){
-        setMessage("Belső rendszer hiba! ");
+      } else if (!response.ok) {
+        setMessage("Belső rendszer hiba!");
+        console.log(response)
       }
-    }catch (error) {
+    } catch (error) {
       console.error('Error:', error);
+      setMessage("Hiba történt a regisztráció során.");
     }
   };
 
@@ -131,6 +135,18 @@ function FormComponent() {
           placeholder=""
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <br />
+      <div className="input-group mb-3">
+        <label className="input-group-text">Tölts fel a logód</label>
+        <input 
+          type="file" 
+          className="form-control" 
+          id="inputGroupFile01" 
+          accept="image/*" 
+          onChange={fajlokEllenorzese}
+          required
         />
       </div>
       <br />

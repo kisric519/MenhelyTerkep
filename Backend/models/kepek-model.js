@@ -10,6 +10,11 @@ const KepekScheme = mongoose.Schema({
         type: String,
         default: "",
         required: true
+    },
+    tipus:{
+        type: String,
+        default: "",
+        required: true
     }
 });
 

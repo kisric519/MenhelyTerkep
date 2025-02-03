@@ -13,12 +13,14 @@ const users = require('./routes/users');
 const menhelyek = require('./routes/menhelyek');
 const admin = require('./routes/admin');
 const naptar = require('./routes/naptar');
+const media = require('./routes/media');
 
 //utvonalak hasznalata
 app.use('/users', users);
 app.use('/menhelyek', menhelyek);
 app.use('/admin', admin);
 app.use('/naptar', naptar);
+app.use('/media', media);
 
 //Adatbázis kapcsolat
 async function connectToDatabase() {

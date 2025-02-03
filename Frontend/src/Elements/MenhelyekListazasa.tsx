@@ -35,6 +35,13 @@ const MenhelyLista = () => {
        <div className="lista">
       {menhelyek.map((menhely: any) => (
         <div key={menhely.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center">
+          {menhely.logo && (
+            <img
+              src={menhely.logo}
+              alt={`Logo of ${menhely.menhelyneve}`}
+              className="logo"
+            />
+          )}
           <h2 className="text-xl font-bold text-gray-800 mb-2">{menhely.menhelyneve}</h2>
           <p className="text-gray-600">{menhely.leiras}</p>
           <button className="gombok">Részletek</button>

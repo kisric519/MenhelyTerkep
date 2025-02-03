@@ -40,6 +40,11 @@ const menhelyekModel = mongoose.Schema({
         type: Boolean,
         default: false,
         required: true
+    },
+    logo:{
+        type: String,
+        default: false,
+        required: true
     }
 });
 

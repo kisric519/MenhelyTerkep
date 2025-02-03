@@ -2,9 +2,11 @@ const express = require('express')
 const router = express.Router()
 const Menhely = require('../models/menhelyek-model');
 const bcrypt = require('bcrypt');
+const upload = require('../middlewares/upload');
+const Kepek = require('../models/kepek-model');
 
 //Menhely regisztráció
-router.post('/regisztracio', async (req, res) => {
+router.post('/regisztracio',upload.single("image"), async (req, res) => {
     try{
         const menhely = req.body
         const letezoMenhely = await Menhely.findOne({ email: menhely.email });
@@ -13,26 +15,31 @@ router.post('/regisztracio', async (req, res) => {
         }
         const salt = await bcrypt.genSalt(10);
         const titkositottJelszo = await bcrypt.hash(menhely.jelszo, salt);
-          const menhelymodel = await Menhely.create({  
+        const cloudFrontUrl = `${process.env.CLOUDFRONT_URL}/${req.file.key}`;
+
+        const menhelymodel = await Menhely.create({  
                 menhelyneve:menhely.menhelyneve,
                 email:menhely.email,
                 telefonszam:menhely.telefonszam,
                 jelszo:titkositottJelszo,
                 menhelycime:menhely.menhelycime,
                 oldallink:menhely.oldal_link,
-                leiras:menhely.leiras
-          });
-          let ujmenhely = await menhelymodel.save();
-          res.json(ujmenhely);
+                leiras: menhely.leiras,
+                logo:cloudFrontUrl
+        });
+        let ujmenhely = await menhelymodel.save();
+
+        res.json(ujmenhely);
      }catch(err){
           console.log(err)
      }
 });
 
-//Összes jóváhagyott menhely lekérdezése
+//Jóváhagyott menhelyek lekérése
 router.get('/jovahagyott', async (req, res) => {
     try {
         const jovahagyottMenhelyek = await Menhely.find({ jovahagyva: true });
+        
         res.json(jovahagyottMenhelyek);
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
