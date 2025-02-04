@@ -1,14 +1,30 @@
 import React from 'react'
 import Header from '../Elements/Header'
 import { Link } from "react-router-dom";
-import '../Styles/home.css'
+import '../Styles/menhelyek.css'
+import menhelyoldalKep from '../assets/menhelyoldalKutya.jpg'
 
 const Menhelyek = () => {
    return (
-     <div>
-         <Header />
-         <h1>ez a menhelyek oldal</h1>
-     </div>
+    <main>
+     <Header/>
+     <section className='hero'>
+            <div className="row">
+                <div className="col-6 heroSzoveg">
+                    <h1>Menhelyek</h1>
+                    <p></p>
+                    <div className='linkek'>
+                        
+                    </div>
+                </div>
+                <div className="col-6 heroKep">
+                    <img src={menhelyoldalKep} alt="" />
+                </div>
+            </div>       
+        </section>
+        
+     
+     </main>
    )
  }
 
