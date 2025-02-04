@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
 import { Link } from "react-router-dom";
 import heroIMG from '../assets/kezdolapKutya.jpg'
 import '../Styles/home.css'
-import Menhelylista from '../Elements/MenhelyekListazasa';
+import Menhelylista from '../Elements/MenhelyekListazasaFooldalon';
 
 
 import ikontappancs from '../assets/tappancsikon.png'
@@ -83,7 +84,8 @@ const Home = () => {
             </div>
             </div>
             </div>
-        </section>   
+           </section>   
+        <Footer />  
      </main>
    )
 }

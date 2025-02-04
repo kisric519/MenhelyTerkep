@@ -1,5 +1,6 @@
 
 import React from 'react'
+import Footer from '../Elements/Footer'
 import Header from '../Elements/Header'
 import EsemenyLista from '../Elements/EgyMenhelyEsemenyLista'
 import { useParams } from 'react-router-dom';
@@ -65,6 +66,7 @@ const Menhely = () => {
            </div>
          </div>
        </section>
+       <Footer />  
      </div>
    )
  }

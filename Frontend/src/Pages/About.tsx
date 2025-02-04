@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../Elements/Footer'
  import Header from '../Elements/Header'
  import { Link } from "react-router-dom";
  import '../Styles/about.css'
@@ -98,7 +99,7 @@ const About = () => {
             </div>       
         </section>
 
-
+<Footer />  
     </main>
    )
  }
