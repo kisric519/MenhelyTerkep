@@ -4,35 +4,35 @@ import '../Styles/listazas.css'
 
 
 const MenhelyLista = () => {
-    const [menhelyek, setMenhelyek] = useState([]);
-    const [loading, setLoading] = useState<boolean>(true);
+  const [menhelyek, setMenhelyek] = useState([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {
-    const menhelyekLekerese = async () => {
-      try {
-        const response = await fetch("http://127.0.0.1:3333/menhelyek/jovahagyott");
-        const data = await response.json();
-        setMenhelyek(data.slice(0, 3))
-      } catch (error) {
-        console.error("hiba:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  useEffect(() => {
+  const menhelyekLekerese = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:3333/menhelyek/jovahagyott");
+      const data = await response.json();
+      setMenhelyek(data.slice(0, 3))
+    } catch (error) {
+      console.error("hiba:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    menhelyekLekerese();
-    }, []);
+  menhelyekLekerese();
+  }, []);
     
-    if (loading) {
-        return <p className="text-center text-gray-500">Betöltés...</p>;
-    }
+  if (loading) {
+    return <p className="text-center text-gray-500">Betöltés...</p>;
+  }
 
-    if (menhelyek.length === 0) {
-        return <p className="text-center text-gray-500">Nincs elérhető menhely.</p>;
-    }
+  if (menhelyek.length === 0) {
+    return <p className="text-center text-gray-500">Nincs elérhető menhely.</p>;
+  }
 
-    return (
-       <div className="lista">
+  return (
+    <div className="lista">
       {menhelyek.map((menhely: any) => (
         <div key={menhely.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center">
           {menhely.logo && (
@@ -48,8 +48,8 @@ const MenhelyLista = () => {
         </div>
       ))}
     </div>
-    );
- }
+  );
+}
 
 export default MenhelyLista
 

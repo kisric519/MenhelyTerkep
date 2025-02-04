@@ -85,3 +85,8 @@
    aspect-ratio: 16/9;
    object-fit: cover;
 }
+
+.boxw{
+   padding: 1rem;
+   border-radius: 10px;
+}

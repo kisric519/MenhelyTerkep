@@ -30,9 +30,9 @@ const MenhelyEsemenyLista = ({ menhelyid }) => {
     }
   
     return (
-      <div className="lista listaesemeny">
+      <div className="d-flex flex-column gap-1">
         {esemenyek.map((esemeny: any) => (
-          <div key={esemeny.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center">
+          <div key={esemeny.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center boxw">
             <h2 className="text-xl font-bold text-gray-800 mb-2">{esemeny.esemenyneve}</h2>
             <p className="text-gray-600">{new Date(esemeny.datum).toLocaleDateString('hu-HU', {year: 'numeric',month: 'long',day: 'numeric',})}</p>
             <p className="text-gray-600">{esemeny.leiras}</p>
