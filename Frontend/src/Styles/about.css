@@ -1,0 +1,26 @@
+.heroSzoveg h1{
+    text-align: left;
+   font-size: 20pt;
+   font-weight: bold;
+}
+
+.heroSzoveg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    flex: 1; /* Az elemek kitöltik a rendelkezésre álló helyet */
+    padding: 30px;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    height: 200px; /* Fix magasság, hogy minden kocka ugyanolyan magas legyen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
