@@ -62,3 +62,26 @@
    width: 25%;
    max-width: 150px;
 }
+
+.galeriakep{
+   width: 23%;
+}
+
+
+.listagaleria{
+   flex-wrap: wrap;
+   display: flex;
+   gap: 20px;
+}
+
+.listagaleria .kepwp{
+   width: 24%;
+}
+
+.listagaleria .kepwp img{
+   width: 100%;
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px rgb(157, 157, 157);
+   aspect-ratio: 16/9;
+   object-fit: cover;
+}

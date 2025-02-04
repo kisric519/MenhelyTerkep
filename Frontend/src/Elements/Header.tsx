@@ -21,6 +21,7 @@ const Navbar = () => {
             <nav className="mainnav">
                 <Link to="/">Kezdőlap</Link>
                 <Link to="/menhelyek">Menhelyek</Link>
+                <Link to="/naptar">Esemény naptár</Link>
                 <Link to="/rolunk">Rólunk</Link>
             </nav>
             <nav>{shelterId ? (

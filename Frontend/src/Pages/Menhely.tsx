@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import '../Styles/menhely.css'
+import GaleriaLista from '../Elements/GaleriaLista'
 
 const Menhely = () => {
   const navigate = useNavigate();
@@ -53,12 +54,13 @@ const Menhely = () => {
        </section>
        <section>
          <div className="row">
-           <div className="col-6">
+           <div className="col-5">
              <h3>Események</h3>
              <EsemenyLista menhelyid={menhelyAdatok._id} />
            </div>
-           <div className="col-6">
-              <h3>Galéria</h3>
+           <div className="col-7">
+             <h3>Galéria</h3>
+             <GaleriaLista menhelyid={menhelyAdatok._id} onSuccess={0} />
            </div>
          </div>
        </section>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../Styles/listazas.css';
 import EsemenyModositas from './EsemenyModositasForm';
+import Betoltes from '../Elements/Betoltes'
 
 const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   const [esemenyek, setEsemenyek] = useState([]);
@@ -27,7 +28,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
     }, [frissitesTrigger]);
     
     if (loading) {
-        return <p className="text-center text-gray-500">Betöltés...</p>;
+        return <Betoltes/>;
     }
 
     if (esemenyek.length === 0) {

@@ -17,6 +17,7 @@ router.post('/feltoltes', upload.single("image"), async (req, res) => {
     const newImage = new Kepek({
       menhelyId: req.body.menhelyid,
       kepurl: cloudFrontUrl,
+      tipus: req.body.tipus
     });
 
     await newImage.save();
@@ -24,6 +25,17 @@ router.post('/feltoltes', upload.single("image"), async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
+});
+
+//Menhely galéria élekérdezése
+router.get('/galeria/:id', async (req, res) => {
+    try {
+        const menhelyid = req.params.id
+        const galeria = await Kepek.find({menhelyId : menhelyid});
+        res.json(galeria);
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
+    }
 });
 
 module.exports = router

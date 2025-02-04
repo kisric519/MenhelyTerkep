@@ -1,11 +1,13 @@
 import Header from '../../Elements/Header'
 import UjEsemeny from '../../Elements/UjEsemenyForm'
+import GaleriaLista from '../../Elements/GaleriaLista'
 import EsemenyListazas from '../../Elements/MenhelyEsemenyLista'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import '../../Styles/admin.css'
 import { useNavigate } from 'react-router-dom';
 import img from '../../assets/kezdolapKutya.jpg'
+import Betoltes from '../../Elements/Betoltes'
 
 
 const Admin = () => {
@@ -81,11 +83,12 @@ const Kezdolap = ({ shelterData }: { shelterData: any }) => (
                     <p>Menhely E-mail: {shelterData.email}</p>
                     <p>Menhely Telefonszám: {shelterData.telefonszam}</p>
                 </div>
-            ) : <p>Adatok betöltése...</p>}
+            ) : <Betoltes/>}
             <button className='szerkesztesgomb'>Adatok módosítása</button>
         </section>
     </div>
 );
+
 const Esemenyek = () => {
   const [ujEsemenyAblak, setUjEsemenyAblak] = useState(false);
   const [frissitesTrigger, setFrissitesTrigger] = useState(0);
@@ -120,17 +123,70 @@ const Esemenyek = () => {
     </div>
   )
 };
-const Galeria = () => (
+
+const Galeria = () => {
+  const fileInputRef = useRef(null);
+  const [uploading, setUploading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [menhelyid, setMenhelyid] = useState("");
+  const [frissitesTrigger, setFrissitesTrigger] = useState(0);
+
+  useEffect(() => {
+    const fetchShelterData = async () => {
+      const mentettMenhelyId = await localStorage.getItem('belepisadat');
+      setMenhelyid(mentettMenhelyId)
+    };
+    fetchShelterData();
+  }, []);
+
+  const kepfeltoltes = () => {
+    fileInputRef.current.click();
+  };
+
+ const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("menhelyid", menhelyid);
+    formData.append("tipus", "galeria");
+    setUploading(true);
+    setMessage("");
+
+    try {
+      await axios.post("http://127.0.0.1:3333/media/feltoltes", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      setMessage("Sikeres feltöltés!");
+      setFrissitesTrigger((prev) => prev + 1);
+    } catch (err) {
+      setMessage("Hiba történt a feltöltés során!");
+    }
+
+    setUploading(false);
+  };
+
+  return(
   <div>
     <div className='d-flex gap-2'>
       <h2>Galéria</h2>
-      <button className='ujgomb' onClick={() => (null)}>+ Kép</button>
+      <button className='ujgomb' onClick={kepfeltoltes} >+ Kép</button>
+      {uploading ? <Betoltes/> : null}
+      <input 
+        type="file" 
+        ref={fileInputRef} 
+        onChange={handleFileChange} 
+        style={{ display: "none" }} 
+      />
     </div>
     <br />
     <section className='galeria'>
-      <img className='galeriaElem' src={img} />
+      <GaleriaLista menhelyid={menhelyid} onSuccess={frissitesTrigger} />
     </section>
   </div>
-);
+  )};
 
 export default Admin
