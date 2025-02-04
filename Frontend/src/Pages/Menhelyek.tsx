@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Elements/Header'
 import { Link } from "react-router-dom";
+import '../Styles/home.css'
 
 const Menhelyek = () => {
    return (
