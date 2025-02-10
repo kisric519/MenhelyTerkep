@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../Elements/Header'
 import { Link } from "react-router-dom";
 import LoginForm from '../../Elements/LoginForm';
 import '../../Styles/loginregister.css'
@@ -7,7 +6,6 @@ import '../../Styles/loginregister.css'
 const Login = () => {    
    return (
      <div>
-        <Header />
         <h1>Jelentkezz be mint menhely</h1>
         <section>
             <div className="row">

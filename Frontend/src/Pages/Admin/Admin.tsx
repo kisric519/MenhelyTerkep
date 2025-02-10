@@ -1,4 +1,3 @@
-import Header from '../../Elements/Header'
 import UjEsemeny from '../../Elements/UjEsemenyForm'
 import GaleriaLista from '../../Elements/GaleriaLista'
 import EsemenyListazas from '../../Elements/MenhelyEsemenyLista'
@@ -31,8 +30,6 @@ const Admin = () => {
     
    return (
     <div className="p-6 max-w-4xl mx-auto">
-        <Header />
-
         <div className="flex w-full p-2 rounded-lg space-x-2">
         {[
           { key: "kezdolap", label: "Alap adatok" },

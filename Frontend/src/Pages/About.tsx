@@ -1,6 +1,4 @@
 import React from 'react'
-import Footer from '../Elements/Footer'
- import Header from '../Elements/Header'
  import { Link } from "react-router-dom";
  import '../Styles/about.css'
  import oldalKepFent from '../assets/rolunkoldalCica.jpg'
@@ -9,7 +7,6 @@ import Footer from '../Elements/Footer'
 const About = () => {
    return (
     <main>
- <Header />
         <section className='hero'>
             <div className="row">
                 <div className="col-6 heroSzoveg">
@@ -98,8 +95,6 @@ const About = () => {
                 
             </div>       
         </section>
-
-<Footer />  
     </main>
    )
  }

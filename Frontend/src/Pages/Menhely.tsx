@@ -1,7 +1,4 @@
-
 import React from 'react'
-import Footer from '../Elements/Footer'
-import Header from '../Elements/Header'
 import EsemenyLista from '../Elements/EgyMenhelyEsemenyLista'
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
@@ -31,7 +28,6 @@ const Menhely = () => {
   if (menhelyAdatok == "") {
     return (
       <main>
-        <Header />
         <h2>Betöltés...</h2>
       </main>
     )
@@ -39,7 +35,6 @@ const Menhely = () => {
 
    return (
      <div>
-      <Header />
        <section className='main'>
          <div className="row">
            <div className="col-5">
@@ -51,6 +46,11 @@ const Menhely = () => {
            </div>
            <div className="col-7">
               <h3>Ismerd meg a menhelyet</h3>
+              <br />
+              <p><strong>Menhely címe: </strong>{menhelyAdatok.menhelycime}</p>
+              <p><strong>Menhely oldala: </strong>{menhelyAdatok.oldallink}</p>
+              <p><strong>Menhely száma: </strong>{menhelyAdatok.telefonszam}</p>
+              <p><strong>Menhely e-mail címe: </strong>{menhelyAdatok.email}</p>
            </div>
          </div>
        </section>
@@ -66,7 +66,6 @@ const Menhely = () => {
            </div>
          </div>
        </section>
-       <Footer />  
      </div>
    )
  }

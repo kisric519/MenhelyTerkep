@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../Elements/Header'
 import { Link } from "react-router-dom";
 import '../../Styles/loginregister.css'
 import RegisterFelhasznaloForm from '../../Elements/RegisterFelhasznaloForm';
@@ -7,7 +6,6 @@ import RegisterFelhasznaloForm from '../../Elements/RegisterFelhasznaloForm';
 const RegisterFelhasznalo = () => {
    return (
      <div>
-        <Header />
         <h1>Regisztrálj hozzánk, mint örökbefogadó</h1>
         <div className="link-wrapper">
             <Link to="/regisztracio/menhely">Inkább menhelyként regisztrálok</Link>

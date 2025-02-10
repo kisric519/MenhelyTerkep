@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from '../Elements/Header'
-import Footer from '../Elements/Footer'
 import { Link } from "react-router-dom";
 import heroIMG from '../assets/kezdolapKutya.jpg'
 import '../Styles/home.css'
@@ -15,7 +13,6 @@ import ikonnagyito from '../assets/nagyitoikon.png'
 const Home = () => {
    return (
      <main>
-        <Header />
         <section className='hero'>
             <div className="row">
                 <div className="col-6 heroSzoveg">
@@ -85,7 +82,6 @@ const Home = () => {
             </div>
             </div>
            </section>   
-        <Footer />  
      </main>
    )
 }

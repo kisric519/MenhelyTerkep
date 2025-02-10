@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Nav, Dropdown, Button } from 'react-bootstrap';
 import { Calendar }from 'react-calendar';
-import Header from '../Elements/Header'
-import Footer  from '../Elements/Footer'
 import { Link } from "react-router-dom";
 
 const Naptar = () => {
@@ -26,7 +24,6 @@ const Naptar = () => {
 
   return (
     <Container fluid>
-      <Header />
       <Row>
         <Col md={3} className="border-right">
           <h3>Menü</h3>
@@ -83,7 +80,6 @@ const Naptar = () => {
           </div>
         </Col>
       </Row>
-      <Footer/>
     </Container>
  
   )
