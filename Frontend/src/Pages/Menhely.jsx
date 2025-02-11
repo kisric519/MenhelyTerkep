@@ -12,13 +12,13 @@ const Menhely = () => {
   const { id } = useParams();
 
   const [menhelyAdatok, setMenhelyAdatok] = useState("");
-
+  const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchShelterData = async () => {
       if (!id) {
           navigate('/');
       } else {
-        const response = await axios.get(`http://127.0.0.1:3333/menhelyek/${id}`);
+        const response = await axios.get(`${apiUrl}/menhelyek/${id}`);
         setMenhelyAdatok(response.data);
       }
     };

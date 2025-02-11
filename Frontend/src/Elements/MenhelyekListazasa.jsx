@@ -6,11 +6,12 @@ import '../Styles/listazas.css'
 const MenhelyLista = () => {
     const [menhelyek, setMenhelyek] = useState([]);
     const [loading, setLoading] = useState(true);
-
+  const apiUrl = import.meta.env.VITE_API_URL;
+  
     useEffect(() => {
     const menhelyekLekerese = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3333/menhelyek/jovahagyott");
+        const response = await fetch(apiUrl+"/menhelyek/jovahagyott");
         const data = await response.json();
         setMenhelyek(data)
       } catch (error) {

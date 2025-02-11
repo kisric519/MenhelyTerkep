@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function FormComponent({ onSuccess }) {
   const [message, setMessage] = useState('');
-
+const apiUrl = import.meta.env.VITE_API_URL;
   const [menhelyid, setMenhelyid] = useState('');
   const [esemenyNeve, setEsemenyNeve] = useState('');
   const [esemenyLeirasa, setEsemenyLeirasa] = useState('');
@@ -12,7 +12,6 @@ function FormComponent({ onSuccess }) {
     return today.toISOString().split('T')[0];
   });
   
-  const apiurl = process.env.VITE_API_URL || "http://localhost:3333";
 
     useEffect(() => {
     const fetchShelterData = async () => {
@@ -33,7 +32,7 @@ function FormComponent({ onSuccess }) {
     }
 
     try{
-      const response = await fetch(apiurl+'/naptar/letrehozas', {
+      const response = await fetch(apiUrl+'/naptar/letrehozas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

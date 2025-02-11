@@ -5,11 +5,12 @@ import Betoltes from '../Elements/Betoltes'
 const GaleriaLista = ({ onSuccess, menhelyid }) => {
   const [kepek, setKepek] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
       const KepekLekerese = async () => {
         try {
-        const response = await fetch("http://127.0.0.1:3333/media/galeria/"+menhelyid);
+        const response = await fetch(apiUrl+"/media/galeria/"+menhelyid);
         const data = await response.json();
         setKepek(data)
       } catch (error) {

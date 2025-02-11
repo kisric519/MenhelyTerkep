@@ -12,7 +12,8 @@ function FormComponent() {
   const [oldallink, setOldallink] = useState('');
   const [leiras, setLeiras] = useState('');
   const navigate = useNavigate();
-
+  const apiUrl = import.meta.env.VITE_API_URL;
+  
   const fajlokEllenorzese = (event) => {
     const selectedFile = event.target.files?.[0];
     if (selectedFile) {
@@ -37,7 +38,7 @@ function FormComponent() {
     }
 
     try {
-      const response = await fetch('http://localhost:3333/menhelyek/regisztracio', {
+      const response = await fetch(apiUrl+'/menhelyek/regisztracio', {
         method: 'POST',
         body: formData,
       });

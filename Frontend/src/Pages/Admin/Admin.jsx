@@ -127,7 +127,7 @@ const Galeria = () => {
   const [message, setMessage] = useState("");
   const [menhelyid, setMenhelyid] = useState("");
   const [frissitesTrigger, setFrissitesTrigger] = useState(0);
-
+const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
     const fetchShelterData = async () => {
       const mentettMenhelyId = await localStorage.getItem('belepisadat');
@@ -152,7 +152,7 @@ const Galeria = () => {
     setMessage("");
 
     try {
-      await axios.post("http://127.0.0.1:3333/media/feltoltes", formData, {
+      await axios.post(apiUrl+"/media/feltoltes", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

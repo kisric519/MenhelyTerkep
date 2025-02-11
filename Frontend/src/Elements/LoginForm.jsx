@@ -6,7 +6,8 @@ function FormComponent() {
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const apiUrl = import.meta.env.VITE_API_URL;
+  
   const bejelentkezesBekuldese = async (e) => {
     if (email == "" || password == "")
     {
@@ -15,7 +16,7 @@ function FormComponent() {
 
     e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:3333/menhelyek/bejelentkezes`, {
+      const response = await fetch(apiUrl+`/menhelyek/bejelentkezes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -11,11 +11,11 @@ function FormComponent({ onSuccess, modositandoId }) {
     today.setDate(today.getDate() + 7);
     return today.toISOString().split('T')[0];
   });
-  
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
       const esemenyLekerese = async () => {
-      const response = await axios.get(`http://127.0.0.1:3333/naptar/esemeny/${modositandoId}`);
+      const response = await axios.get(`${apiUrl}/naptar/esemeny/${modositandoId}`);
       const data = response.data
 
       setDatum(data.datum)
@@ -36,7 +36,7 @@ function FormComponent({ onSuccess, modositandoId }) {
     }
 
     try{
-      const response = await fetch('http://127.0.0.1:3333/naptar/frissites/'+modositandoId, {
+      const response = await fetch(apiUrl+'/naptar/frissites/'+modositandoId, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ function FormComponent() {
   const [password, setPassword] = useState('');
   const [fullname, setFullname] = useState('');
   const [tel, setTel] = useState('');
-  const apiurl = process.env.VITE_API_URL || "http://localhost:3333";
+  const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
 
   const regisztracioBekuldese = async (e) => {
@@ -21,7 +21,7 @@ function FormComponent() {
     }
 
     try{
-      const response = await fetch(apiurl+'/users/regisztracio', {
+      const response = await fetch(apiUrl+'/users/regisztracio', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

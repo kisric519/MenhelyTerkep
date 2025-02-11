@@ -4,11 +4,11 @@ import '../Styles/listazas.css';
 const MenhelyEsemenyLista = ({ menhelyid }) => {
   const [esemenyek, setEsemenyek] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const apiUrl = import.meta.env.VITE_API_URL;
     useEffect(() => {
       const esemenyekLekerese = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:3333/naptar/esemenyek/"+menhelyid);
+        const response = await fetch(apiUrl+"/naptar/esemenyek/"+menhelyid);
         const data = await response.json();
         setEsemenyek(data)
       } catch (error) {

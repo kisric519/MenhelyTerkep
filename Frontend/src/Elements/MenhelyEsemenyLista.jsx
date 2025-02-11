@@ -9,12 +9,13 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   const [loading, setLoading] = useState(true);
   const [esemenyModositasAblak, setEsemenyModositasAblak] = useState(false);
   const [modositandoID, setModositandoID] = useState('');
-  
+  const apiUrl = import.meta.env.VITE_API_URL;
+
     useEffect(() => {
       const esemenyekLekerese = async () => {
       const mentettMenhelyId = localStorage.getItem('belepisadat');
       try {
-        const response = await fetch("http://127.0.0.1:3333/naptar/esemenyek/"+mentettMenhelyId);
+        const response = await fetch(apiUrl+"/naptar/esemenyek/"+mentettMenhelyId);
         const data = await response.json();
         setEsemenyek(data)
       } catch (error) {
@@ -37,7 +38,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   
     const esemenyTorles = async (id) => {
       if (confirm("Biztosan törölni szeretnéd?")) {
-        const response = await fetch('http://127.0.0.1:3333/naptar/torles/'+id, {
+        const response = await fetch(apiUrl+'/naptar/torles/'+id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +62,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   const esemenyekLekerese = async () => {
       const mentettMenhelyId = localStorage.getItem('belepisadat');
       try {
-        const response = await fetch("http://127.0.0.1:3333/naptar/esemenyek/"+mentettMenhelyId);
+        const response = await fetch(apiUrl+"/naptar/esemenyek/"+mentettMenhelyId);
         const data = await response.json();
         setEsemenyek(data)
       } catch (error) {
