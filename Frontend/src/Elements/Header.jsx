@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
-    const [shelterId, setShelterId] = useState<string | null>(null);
+    const [shelterId, setShelterId] = useState(null);
 
     useEffect(() => {
       setShelterId(localStorage.getItem('belepisadat'));

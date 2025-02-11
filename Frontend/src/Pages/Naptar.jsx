@@ -4,20 +4,17 @@ import { Calendar }from 'react-calendar';
 import { Link } from "react-router-dom";
 
 const Naptar = () => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [selectedCity, setSelectedCity] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // Sample data for cities and categories
   const cities = ['Budapest', 'Debrecen', 'Pécs'];
   const categories = ['Technology', 'Health', 'Business'];
 
-  // Handle calendar date selection
-  const handleDateChange = (date: Date) => {
+  const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  // Handle search button click
   const handleSearch = () => {
     console.log('Searching with:', { selectedDate, selectedCity, selectedCategory });
   };

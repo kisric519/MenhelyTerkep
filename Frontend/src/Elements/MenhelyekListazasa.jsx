@@ -5,7 +5,7 @@ import '../Styles/listazas.css'
 
 const MenhelyLista = () => {
     const [menhelyek, setMenhelyek] = useState([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
     const menhelyekLekerese = async () => {
@@ -37,7 +37,7 @@ const MenhelyLista = () => {
           <span><p>Keresási találatok: <strong>{menhelyek.length}</strong></p></span>   
         </div>
         <div className="lista">
-          {menhelyek.map((menhely: any) => (
+          {menhelyek.map((menhely) => (
             <div key={menhely.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center">
               {menhely.logo && (
                 <img

@@ -57,7 +57,7 @@ const Admin = () => {
    )
  }
 
-const Kezdolap = ({ shelterData }: { shelterData: any }) => (
+const Kezdolap = ({ shelterData }) => (
     <div>
         <h2>Menhely adatai</h2>
         <section>

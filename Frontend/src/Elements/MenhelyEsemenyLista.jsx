@@ -6,8 +6,8 @@ import Betoltes from '../Elements/Betoltes'
 
 const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   const [esemenyek, setEsemenyek] = useState([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [esemenyModositasAblak, setEsemenyModositasAblak] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [esemenyModositasAblak, setEsemenyModositasAblak] = useState(false);
   const [modositandoID, setModositandoID] = useState('');
   
     useEffect(() => {
@@ -78,7 +78,7 @@ const MenhelyEsemenyLista = ({ frissitesTrigger, onSuccess }) => {
   
     return (
       <div className="lista listaesemeny">
-        {esemenyek.map((esemeny: any) => (
+        {esemenyek.map((esemeny) => (
           <div key={esemeny.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center">
             <h2 className="text-xl font-bold text-gray-800 mb-2">{esemeny.esemenyneve}</h2>
             <p className="text-gray-600">{new Date(esemeny.datum).toLocaleDateString('hu-HU', {year: 'numeric',month: 'long',day: 'numeric',})}</p>

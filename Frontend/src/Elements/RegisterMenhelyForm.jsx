@@ -13,7 +13,7 @@ function FormComponent() {
   const [leiras, setLeiras] = useState('');
   const navigate = useNavigate();
 
-  const fajlokEllenorzese = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const fajlokEllenorzese = (event) => {
     const selectedFile = event.target.files?.[0];
     if (selectedFile) {
       setFiles(selectedFile);

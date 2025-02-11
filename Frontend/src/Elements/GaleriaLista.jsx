@@ -4,7 +4,7 @@ import Betoltes from '../Elements/Betoltes'
 
 const GaleriaLista = ({ onSuccess, menhelyid }) => {
   const [kepek, setKepek] = useState([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(true);
   
   useEffect(() => {
       const KepekLekerese = async () => {
@@ -32,7 +32,7 @@ const GaleriaLista = ({ onSuccess, menhelyid }) => {
   
     return (
       <div className="listagaleria">
-        {kepek.map((kep: any) => (
+        {kepek.map((kep) => (
           <div key={kep.id} className="kepwp">
             <img className="galeriakep" src={kep.kepurl} alt="" />
           </div>

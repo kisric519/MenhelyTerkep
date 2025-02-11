@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './Elements/Footer';
 import Header from './Elements/Header'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
      <Header />
