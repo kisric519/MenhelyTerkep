@@ -1,3 +1,5 @@
+const https = require('https');
+const http = require('http');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -35,6 +37,17 @@ connectToDatabase();
 
 //Szerver létrehozása
 const port = process.env.API_PORT;
-app.listen(port, () => {
+const httpServer = http.createServer(app);
+
+//Az app nyitott portjai
+httpServer.listen(port, () => {
   console.log(`Szerver fut a ${port} porton!`);
+});
+
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/fullchain.pem'),
+}, app);
+httpsServer.listen(445, () => {
+  console.log('---HTTPS gerinc szerver elerheto a 420 porton---');
 });
