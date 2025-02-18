@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function FormComponent() {
-  const [file, setFiles] = useState<File | null>(null);
+  const [file, setFiles] = useState(null);
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

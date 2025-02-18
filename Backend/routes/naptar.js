@@ -43,6 +43,28 @@ router.get('/esemenyek/:id', async (req, res) => {
     }
 });
 
+//Dátum szerint szűrés
+router.get('/esemenyek/szures/:datum', async (req, res) => {
+    try {
+        const datum = req.params.datum
+        const startOfDay = new Date(datum);
+
+        const endOfDay = new Date(datum);
+        endOfDay.setDate(endOfDay.getDate() + 1);
+
+
+        const szurtesemenyek = await Naptar.find({
+            datum: {
+                $gte: startOfDay, 
+                $lt: endOfDay, 
+            },
+        });
+        res.json(szurtesemenyek);
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
+    }
+});
+
 //Egy esemény lekérdezése
 router.get('/esemeny/:id', async (req, res) => {
     try {
