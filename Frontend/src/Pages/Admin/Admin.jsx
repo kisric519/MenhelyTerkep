@@ -13,7 +13,7 @@ const Admin = () => {
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState("kezdolap");
     const [menhelyAdatok, setMenhelyAdatok] = useState(null);
-
+    const apiUrl = import.meta.env.VITE_API_URL;
     useEffect(() => {
     const fetchShelterData = async () => {
       const mentettMenhelyId = await localStorage.getItem('belepisadat');
@@ -21,7 +21,7 @@ const Admin = () => {
       if (!mentettMenhelyId) {
           navigate('/');
       } else {
-        const response = await axios.get(`http://127.0.0.1:3333/menhelyek/${mentettMenhelyId}`);
+        const response = await axios.get(`${apiUrl}/menhelyek/${mentettMenhelyId}`);
         setMenhelyAdatok(response.data);
       }
     };
