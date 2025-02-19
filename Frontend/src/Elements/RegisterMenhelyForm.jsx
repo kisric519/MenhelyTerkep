@@ -21,7 +21,6 @@ function FormComponent() {
     }
   };
 
-
   const regisztracioBekuldese = async (e) => {
     e.preventDefault();
 
@@ -34,7 +33,7 @@ function FormComponent() {
     formData.append('jelszo', password);
     formData.append('telefonszam', tel);
     if (file) {
-      formData.append('image', file); // Kép hozzáadása
+      formData.append('image', file);
     }
 
     try {
@@ -51,7 +50,7 @@ function FormComponent() {
         setMessage("Ez az email cím már használatban van!");
       } else if (!response.ok) {
         setMessage("Belső rendszer hiba!");
-        console.log(response)
+        console.log(response);
       }
     } catch (error) {
       console.error('Error:', error);
@@ -60,100 +59,47 @@ function FormComponent() {
   };
 
   return (
-    <form onSubmit={regisztracioBekuldese}>
+    <form onSubmit={regisztracioBekuldese} className="container mt-4">
       <span className='msgbox'>{message}</span>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Menhely neve</label>
-        <input
-          type="text"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder=""
-          value={menhelyneve}
-          onChange={(e) => setMenhelyneve(e.target.value)}
-        />
+      <div className="row">
+        <div className="col-md-6 col-12">
+          <div className="form-group">
+            <label>Menhely neve</label>
+            <input type="text" className="form-control" value={menhelyneve} onChange={(e) => setMenhelyneve(e.target.value)} />
+          </div>
+          <div className="form-group">
+            <label>E-mail cím</label>
+            <input type="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div className="form-group">
+            <label>Telefonszám</label>
+            <input type="tel" className="form-control" value={tel} onChange={(e) => setTel(e.target.value)} />
+          </div>
+          <div className="form-group">
+            <label>Menhely címe</label>
+            <input type="text" className="form-control" value={menhelycime} onChange={(e) => setMenhelycime(e.target.value)} />
+          </div>
+        </div>
+        <div className="col-md-6 col-12">
+          <div className="form-group">
+            <label>Menhely weboldala</label>
+            <input type="text" className="form-control" value={oldallink} onChange={(e) => setOldallink(e.target.value)} />
+          </div>
+          <div className="form-group">
+            <label>Mesélj magatokról</label>
+            <textarea className="form-control" rows="3" value={leiras} onChange={(e) => setLeiras(e.target.value)}></textarea>
+          </div>
+          <div className="form-group">
+            <label>Jelszó</label>
+            <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">E-mail cím</label>
-        <input
-          type="email"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder=""
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Telefonszám</label>
-        <input
-          type="tel"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder=""
-          value={tel}
-          onChange={(e) => setTel(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Menhely címe</label>
-        <input
-          type="text"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder=""
-          value={menhelycime}
-          onChange={(e) => setMenhelycime(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Menhely weboldala</label>
-        <input
-          type="text"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder=""
-          value={oldallink}
-          onChange={(e) => setOldallink(e.target.value)}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Mesélj magatokról</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value={leiras}
-          onChange={(e) => setLeiras(e.target.value)}></textarea>
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Jelszó</label>
-        <input
-          type="password"
-          className="form-control"
-          id="exampleInputPassword1"
-          placeholder=""
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <br />
-      <div className="input-group mb-3">
+      <div className="input-group mb-3 mt-3">
         <label className="input-group-text">Tölts fel a logód</label>
-        <input 
-          type="file" 
-          className="form-control" 
-          id="inputGroupFile01" 
-          accept="image/*" 
-          onChange={fajlokEllenorzese}
-          required
-        />
+        <input type="file" className="form-control" accept="image/*" onChange={fajlokEllenorzese} required />
       </div>
-      <br />
-      <button type="submit" className="btn btn-primary bg">
-        Regisztráció menhelyként
-      </button>
+      <button type="submit" className="btn btn-primary w-100">Regisztráció menhelyként</button>
     </form>
   );
 }
