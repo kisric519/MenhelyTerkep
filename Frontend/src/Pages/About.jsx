@@ -17,7 +17,7 @@ const About = () => {
             Arra törekszünk, hogy támogassuk az állatvédelmet és segítünk összekapcsolni az embereket azokkal az állatokkal, akik új otthonra vágynak.
           </p>
           <div className='linkek'>
-            <Link to="/menhelyek" className="btn btn-primary">Fogadj örökbe</Link>
+            <Link to="/menhelyek" className="btn btn-dark">Fogadj örökbe</Link>
           </div>
         </div>
         <div className="col-md-6 col-12 text-center heroKep">
@@ -38,7 +38,7 @@ const About = () => {
           <div className="border p-3 box h-100">
             <h4>1. Válassz menhelyet</h4>
             <p>Az örökbefogadás menete egyszerű, de gondos odafigyelést igényel. Az oldalunkon megtalálhatsz számos menhelyet, ahonnan kiválaszthatod a számodra tökéleteset.</p>
-            <Link to="/menhelyek" className="btn btn-primary mt-auto">Menhelyek</Link>
+            <Link to="/menhelyek" className="btn btn-dark mt-auto">Menhelyek</Link>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ const About = () => {
             <li>Az örökbefogadással nemcsak egy új esélyt adsz egy állatnak, hanem hozzájárulsz ahhoz is, hogy csökkenjen az utcán élő vagy menhelyeken tartott állatok száma.</li>
           </ul>
           <div className='linkek'>
-            <Link to="/menhelyek" className="btn btn-primary">Menhelyek</Link>
+            <Link to="/menhelyek" className="btn btn-dark">Menhelyek</Link>
           </div>
         </div>
       </div>

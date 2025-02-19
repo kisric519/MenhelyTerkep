@@ -65,7 +65,7 @@ function FormComponent() {
         <label>Jelszó</label>
         <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
       </div>
-      <button type="submit" className="btn btn-primary w-100 mt-3">Regisztráció örökbefogadóként</button>
+      <button type="submit" className="btn btn-dark w-100 mt-3">Regisztráció örökbefogadóként</button>
     </form>
   );
 }

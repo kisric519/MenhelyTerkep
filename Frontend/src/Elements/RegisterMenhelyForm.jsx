@@ -99,7 +99,7 @@ function FormComponent() {
         <label className="input-group-text">Tölts fel a logód</label>
         <input type="file" className="form-control" accept="image/*" onChange={fajlokEllenorzese} required />
       </div>
-      <button type="submit" className="btn btn-primary w-100">Regisztráció menhelyként</button>
+      <button type="submit" className="btn btn-dark w-100">Regisztráció menhelyként</button>
     </form>
   );
 }
