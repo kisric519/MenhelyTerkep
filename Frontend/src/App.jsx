@@ -9,7 +9,8 @@ import Menhelyek from './Pages/Menhelyek';
 import Naptar from './Pages/Naptar';
 import RegisterMenhely from './Pages/Regisztraciok/RegisterMenhely';
 import RegisterFelhasznalo from './Pages/Regisztraciok/RegisterFelhasznalo';
-import Login from './Pages/Regisztraciok/Login';
+import LoginMenhely from './Pages/Regisztraciok/LoginMenhely';
+import LoginFelhasznalo from './Pages/Regisztraciok/LoginFelhasznalo';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
          <Route path='/menhelyek' element={<Menhelyek/>} />
          <Route path='/regisztracio/menhely' element={<RegisterMenhely/>} />
          <Route path='/regisztracio/felhasznalo' element={<RegisterFelhasznalo/>} />
-         <Route path='/bejelentkezes' element={<Login/>} />
+         <Route path='/bejelentkezes/menhely' element={<LoginMenhely/>} />
+         <Route path='/bejelentkezes/felhasznalo' element={<LoginFelhasznalo/>} />
          <Route path='/menhely/:id' element={<Menhely/>} />
        </Routes>
      </div>

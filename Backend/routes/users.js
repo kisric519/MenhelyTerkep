@@ -32,7 +32,7 @@ router.post('/regisztracio', async (req, res) => {
 });
 
 //Bejelentkezés
-router.post('/bejelentkezés', async (req, res) => {
+router.post('/bejelentkezes', async (req, res) => {
     try {
         const adatok = req.body;
         const useremail = adatok.email

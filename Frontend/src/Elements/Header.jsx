@@ -40,7 +40,7 @@ const Navbar = () => {
                         ) : (
                             <>
                                 <li className="nav-item"><Link className="nav-link" to="/regisztracio/menhely">Regisztráció</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/bejelentkezes">Bejelentkezés</Link></li>
+                                <li className="nav-item"><Link className="nav-link" to="/bejelentkezes/menhely">Bejelentkezés</Link></li>
                             </>
                         )}
                     </ul>
