@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import OsszesEsemenyLista from "../Elements/OsszesEsemenyLista";
 import Header from "../Elements/Header";
 import Footer from "../Elements/Footer";
+import "../Styles/hero.css"
 
 const Naptar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -10,6 +11,9 @@ const Naptar = () => {
   return (
     <>
       <Header />
+      <div className="heronaptar">
+        <h1>Események</h1>
+      </div>
       <div className="container-fluid">
         <div className="row mt-5 mb-5">
           <div className="col-lg-3 col-md-4 col-12 mb-3">
