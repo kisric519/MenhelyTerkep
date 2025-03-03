@@ -25,6 +25,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
             apiUrl + "/naptar/esemenyek/szures/" + kereses.split("T")[0],
           );
           const data = await response.json();
+          console.log(data)
           setEsemenyek(data);
         } catch (error) {
           console.error("hiba:", error);
@@ -72,6 +73,9 @@ const OsszesEsemenyLista = ({ kereses }) => {
               month: "long",
               day: "numeric",
             })}
+          </p>
+          <p>
+            <strong>{esemeny.menhelyNev}</strong>
           </p>
           <p className="text-gray-600">{vagottSzoveg(esemeny.leiras, 70)}</p>
         </div>

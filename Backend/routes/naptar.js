@@ -26,12 +26,33 @@ router.post('/letrehozas', async (req, res) => {
 //Összes esemény lekérdezése
 router.get('/esemenyek', async (req, res) => {
     try {
+        // Az összes esemény lekérése
         const osszesesemeny = await Naptar.find();
-        res.json(osszesesemeny);
+
+        // Menhelyek ID-jainak kinyerése
+        const menhelyIds = osszesesemeny.map(esemeny => esemeny.menhelyId);  // Feltételezve, hogy a menhelyId van az eseményekben
+
+        // Külön lekérjük a menhelyek adatait
+        const menhelyek = await Menhely.find({
+            _id: { $in: menhelyIds }
+        });
+
+        // Az események és menhelyek összekapcsolása
+        const eredmeny = osszesesemeny.map(esemeny => {
+            const menhely = menhelyek.find(m => m._id.toString() === esemeny.menhelyId.toString());
+            return {
+                ...esemeny.toObject(),
+                menhelyNev: menhely.menhelyneve,  // Menhely neve
+                menhelyLogo: menhely.logo,  // Menhely logó
+            };
+        });
+
+        res.json(eredmeny);
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
 });
+
 
 //Egy menhely eseményei lekérdezése
 router.get('/esemenyek/:id', async (req, res) => {
@@ -73,7 +94,7 @@ router.get('/esemenyek/szures/:datum', async (req, res) => {
             const menhely = menhelyek.find(m => m._id.toString() === esemeny.menhelyId.toString());
             return {
                 ...esemeny.toObject(),
-                menhelyNev: menhely.nev,  // Menhely neve
+                menhelyNev: menhely.menhelyneve,  // Menhely neve
                 menhelyLogo: menhely.logo,  // Menhely logó
             };
         });
