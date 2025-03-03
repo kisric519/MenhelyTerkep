@@ -13,7 +13,6 @@ const OsszesEsemenyLista = ({ kereses }) => {
         try {
           const response = await fetch(apiUrl + "/naptar/esemenyek");
           const data = await response.json();
-          console.log(data)
           setEsemenyek(data);
         } catch (error) {
           console.error("hiba:", error);
@@ -26,7 +25,6 @@ const OsszesEsemenyLista = ({ kereses }) => {
             apiUrl + "/naptar/esemenyek/szures/" + kereses.split("T")[0],
           );
           const data = await response.json();
-          console.log(data)
           setEsemenyek(data);
         } catch (error) {
           console.error("hiba:", error);
@@ -65,6 +63,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
           key={esemeny.id}
           className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center"
         >
+          <img className="esemenylogo" src={esemeny.logo} />
           <h2 className="text-xl font-bold text-gray-800 mb-2">
             {esemeny.esemenyneve}
           </h2>
@@ -76,7 +75,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
             })}
           </p>
           <p>
-            <strong>{esemeny.menhelyNev}</strong>
+            <strong>Menhely: {esemeny.menhelyneve}</strong>
           </p>
           <p className="text-gray-600">{vagottSzoveg(esemeny.leiras, 70)}</p>
         </div>

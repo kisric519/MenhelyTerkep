@@ -136,3 +136,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.esemenylogo{
+   max-width: 100px;
+}
