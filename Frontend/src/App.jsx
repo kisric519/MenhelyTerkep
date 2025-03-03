@@ -12,10 +12,12 @@ import RegisterMenhely from './Pages/Regisztraciok/RegisterMenhely';
 import RegisterFelhasznalo from './Pages/Regisztraciok/RegisterFelhasznalo';
 import LoginMenhely from './Pages/Regisztraciok/LoginMenhely';
 import LoginFelhasznalo from './Pages/Regisztraciok/LoginFelhasznalo';
-
+import Footer from './Elements/Footer';
+import Header from './Elements/Header'
 function App() {
   return (
     <div className="App">
+      <Header />
        <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/admin' element={<Admin/>} />
@@ -28,7 +30,8 @@ function App() {
          <Route path='/bejelentkezes/menhely' element={<LoginMenhely/>} />
          <Route path='/bejelentkezes/felhasznalo' element={<LoginFelhasznalo/>} />
          <Route path='/menhely/:id' element={<Menhely/>} />
-       </Routes>
+      </Routes>
+      <Footer />
      </div>
   )
 }

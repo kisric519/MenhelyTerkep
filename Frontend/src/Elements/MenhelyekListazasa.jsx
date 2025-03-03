@@ -73,6 +73,7 @@ const MenhelyCard = ({ menhely, kedvencek, setKedvencek }) => {
   const isSaved = kedvencek.includes(menhely._id);
   const apiUrl = import.meta.env.VITE_API_URL;
   const [userId, setUserId] = useState(localStorage.getItem('belepisadat'));
+  const [fioktipus, setFioktipus] = useState(localStorage.getItem('fioktipus'));
 
   const updateKedvencek = async (ujKedvencek) => {
         try {
@@ -110,8 +111,9 @@ const MenhelyCard = ({ menhely, kedvencek, setKedvencek }) => {
 
   return (
     <div className="relative bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center p-3">
-      <div className="savewrapper">
+      <div className={fioktipus !== "felhasznalo" ? "savewrapper disabledlove" : "savewrapper"}>
         <button
+          disabled={fioktipus !== "felhasznalo"}
         onClick={() => toggleKedvenc(menhely._id)}
         className="iconbutton"
         >
