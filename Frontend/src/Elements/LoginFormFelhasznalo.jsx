@@ -1,56 +1,50 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function FormComponent() {
   const navigate = useNavigate();
-  const [message, setMessage] = useState('');
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const apiUrl = import.meta.env.VITE_API_URL;
-  
+
   const bejelentkezesBekuldese = async (e) => {
-    if (email == "" || password == "")
-    {
-      setMessage("Minden mezőt tölts ki!")
+    if (email == "" || password == "") {
+      setMessage("Minden mezőt tölts ki!");
     }
 
     e.preventDefault();
     try {
-      const response = await fetch(apiUrl+`/users/belepes`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            email: email,
-            jelszo: password,
-        }),
+      const response = await fetch(apiUrl + `/users/belepes`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, jelszo: password }),
       });
 
       if (!response.ok) {
-        setMessage("Belső rendszer hiba!")
+        setMessage("Belső rendszer hiba!");
       }
 
       const data = await response.json();
 
-      if (data.msg = "Hibás email vagy jelszo") {
-        setMessage("Belső rendszer hiba!")
+      if ((data.msg = "Hibás email vagy jelszo")) {
+        setMessage("Belső rendszer hiba!");
       }
-      
-      if(data.user._id){
-        const id = await data.user._id
-        await localStorage.setItem('belepisadat', id);
-        await localStorage.setItem('fioktipus', "felhasznalo");
-        navigate('/profilom');
-      }  
+
+      if (data.user._id) {
+        const id = await data.user._id;
+        await localStorage.setItem("belepisadat", id);
+        await localStorage.setItem("fioktipus", "felhasznalo");
+        navigate("/profilom");
+      }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
   return (
-      <form onSubmit={bejelentkezesBekuldese}>
-        <span className='msgbox'>{message}</span>
+    <form onSubmit={bejelentkezesBekuldese}>
+      <span className="msgbox">{message}</span>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">E-mail cím</label>
         <input

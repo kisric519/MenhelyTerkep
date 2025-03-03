@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import '../Styles/listazas.css'
-
+import { useState, useEffect } from "react";
+import "../Styles/listazas.css";
 
 const MenhelyLista = () => {
   const [menhelyek, setMenhelyek] = useState([]);
@@ -9,21 +8,21 @@ const MenhelyLista = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-  const menhelyekLekerese = async () => {
-    try {
-      const response = await fetch(apiUrl+"/menhelyek/jovahagyott");
-      const data = await response.json();
-      setMenhelyek(data.slice(0, 3))
-    } catch (error) {
-      console.error("hiba:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    const menhelyekLekerese = async () => {
+      try {
+        const response = await fetch(apiUrl + "/menhelyek/jovahagyott");
+        const data = await response.json();
+        setMenhelyek(data.slice(0, 3));
+      } catch (error) {
+        console.error("hiba:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  menhelyekLekerese();
+    menhelyekLekerese();
   }, []);
-    
+
   const vagottSzoveg = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
@@ -42,7 +41,10 @@ const MenhelyLista = () => {
   return (
     <div className="lista">
       {menhelyek.map((menhely) => (
-        <div key={menhely.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center p-3">
+        <div
+          key={menhely.id}
+          className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 w-72 text-center p-3"
+        >
           {menhely.logo && (
             <img
               src={menhely.logo}
@@ -50,14 +52,17 @@ const MenhelyLista = () => {
               className="logo fooldallogo"
             />
           )}
-          <h2 className="text-xl font-bold text-gray-800 mb-2">{menhely.menhelyneve}</h2>
-          <p className="text-gray-600">{vagottSzoveg(menhely.leiras,130)}</p>
-          <Link to={`menhely/${menhely._id}`} className="gombok">Részletek</Link>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">
+            {menhely.menhelyneve}
+          </h2>
+          <p className="text-gray-600">{vagottSzoveg(menhely.leiras, 130)}</p>
+          <Link to={`menhely/${menhely._id}`} className="gombok">
+            Részletek
+          </Link>
         </div>
       ))}
     </div>
   );
-}
+};
 
-export default MenhelyLista
-
+export default MenhelyLista;

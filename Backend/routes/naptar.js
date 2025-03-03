@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Naptar = require('../models/naptar-model');
+const Menhely = require('../models/menhelyek-model');
 
 
 //Esemény mentése
@@ -43,27 +44,46 @@ router.get('/esemenyek/:id', async (req, res) => {
     }
 });
 
-//Dátum szerint szűrés
 router.get('/esemenyek/szures/:datum', async (req, res) => {
     try {
-        const datum = req.params.datum
+        const datum = req.params.datum;
         const startOfDay = new Date(datum);
 
         const endOfDay = new Date(datum);
         endOfDay.setDate(endOfDay.getDate() + 1);
 
-
+        // Események lekérdezése a dátum alapján
         const szurtesemenyek = await Naptar.find({
             datum: {
                 $gte: startOfDay, 
-                $lt: endOfDay, 
+                $lt: endOfDay,
             },
         });
-        res.json(szurtesemenyek);
+
+        // Menhelyek adatainak lekérése a menhelyId alapján
+        const menhelyIds = szurtesemenyek.map(esemeny => esemeny.menhelyId);  // Feltételezve, hogy a menhelyId van az eseményekben
+
+        // Külön lekérjük a menhelyek adatait
+        const menhelyek = await Menhely.find({
+            _id: { $in: menhelyIds }
+        });
+
+        // Az események és menhelyek összekapcsolása
+        const eredmeny = szurtesemenyek.map(esemeny => {
+            const menhely = menhelyek.find(m => m._id.toString() === esemeny.menhelyId.toString());
+            return {
+                ...esemeny.toObject(),
+                menhelyNev: menhely.nev,  // Menhely neve
+                menhelyLogo: menhely.logo,  // Menhely logó
+            };
+        });
+
+        res.json(eredmeny);
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
 });
+
 
 //Egy esemény lekérdezése
 router.get('/esemeny/:id', async (req, res) => {
