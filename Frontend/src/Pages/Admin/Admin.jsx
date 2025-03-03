@@ -7,7 +7,7 @@ import '../../Styles/admin.css'
 import { useNavigate } from 'react-router-dom';
 import img from '../../assets/kezdolapKutya.jpg'
 import Betoltes from '../../Elements/Betoltes'
-
+import Header from '../../Elements/Header'
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -28,7 +28,9 @@ const Admin = () => {
     fetchShelterData();
     }, []);
     
-   return (
+  return (
+    <>
+      <Header />
     <div className="p-6 max-w-4xl mx-auto">
         <div className="flex w-full p-2 rounded-lg space-x-2">
         {[
@@ -53,7 +55,8 @@ const Admin = () => {
         {activeTab === "esemenyek" && <Esemenyek />}
         {activeTab === "galeria" && <Galeria />}
       </div>
-    </div>
+      </div>
+      </>
    )
  }
 

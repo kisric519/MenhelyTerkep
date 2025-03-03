@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import OsszesEsemenyLista from '../Elements/OsszesEsemenyLista';
+import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
 
 const Naptar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
+<>
+    <Header />
  <div className="container-fluid">
   <div className="row mt-5 mb-5">
     <div className="col-lg-3 col-md-4 col-12 mb-3">
@@ -25,7 +29,8 @@ const Naptar = () => {
       <OsszesEsemenyLista kereses={selectedDate} />
     </div>
   </div>
-</div>
+      </div>
+      </>
   )
 }
 

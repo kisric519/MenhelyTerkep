@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
  import { Link } from "react-router-dom";
  import '../Styles/about.css'
  import oldalKepFent from '../assets/rolunkoldalCica.jpg'
@@ -6,7 +8,8 @@ import React from 'react'
 
 const About = () => {
    return (
-    <main>
+     <main>
+        <Header />
       <section className="hero container mt-4">
       <div className="row">
         <div className="col-md-6 col-12 text-center text-md-start heroSzoveg">
@@ -86,7 +89,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  
+   <Footer />
     </main>
    )
  }

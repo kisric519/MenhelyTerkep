@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../Styles/header.css';
 import logo from '../assets/logo.png';
@@ -8,6 +8,7 @@ const Navbar = () => {
     const [fioktipus, setFioktipus] = useState(localStorage.getItem('fioktipus'));
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setMenuOpen(false);
@@ -17,6 +18,8 @@ const Navbar = () => {
         localStorage.removeItem('belepisadat');
         localStorage.removeItem('fioktipus');
         setShelterId(null);
+        setFioktipus(null)
+        navigate('/')
     };
 
     return (

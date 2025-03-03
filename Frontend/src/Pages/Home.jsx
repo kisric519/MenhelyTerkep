@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import heroIMG from '../assets/kezdolapKutya.jpg'
 import '../Styles/home.css'
 import Menhelylista from '../Elements/MenhelyekListazasaFooldalon';
-
+import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
 
 import ikontappancs from '../assets/tappancsikon.png'
 import ikonbeszed from '../assets/beszedikon.png'
@@ -11,9 +12,11 @@ import ikonhaz from '../assets/hazikon.png'
 import ikonnagyito from '../assets/nagyitoikon.png'
 
 const Home = () => {
-   return (
-     
-    <main className="container mt-4">
+  return (
+     <>
+     <Header />
+     <main className="container mt-4">
+       
       <section className="hero text-center text-md-start">
         <div className="row align-items-center">
           <div className="col-md-6 col-12">
@@ -85,7 +88,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-     </main>
+      </main>
+      <Footer />
+      </>
    )
 }
 

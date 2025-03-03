@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import '../../Styles/loginregister.css'
 import RegisterMenhelyForm from '../../Elements/RegisterMenhelyForm';
+import Header from '../../Elements/Header'
+
 
 const RegisterMenhely = () => {
   return (
+    <>
+      <Header />
     <div className="container-fluid p-3">
        <h1 className="text-center">Regisztrálj hozzánk, mint menhely</h1>
        <br />
@@ -18,7 +22,8 @@ const RegisterMenhely = () => {
                </div>   
            </div>
        </section>
-    </div>
+      </div>
+      </>
   )
 }
 

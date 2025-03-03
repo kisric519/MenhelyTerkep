@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Felhasznalok = require('../models/felhasznalok-model');
 const bcrypt = require('bcrypt');
+const Menhely = require('../models/menhelyek-model');
 
 //Felhasználó regisztráció
 router.post('/regisztracio', async (req, res) => {
@@ -62,6 +63,30 @@ router.get("/kedvencek/:userId", async (req, res) => {
     }
 });
 
+router.get("/kedvencekadattal/:userId", async (req, res) => {
+    try {
+        // A felhasználó lekérése
+        const felhasznalo = await Felhasznalok.findById(req.params.userId);
+        if (!felhasznalo) {
+            return res.status(404).json({ message: "Felhasználó nem található" });
+        }
+
+        // A kedvencek menhelyek azonosítóinak lekérése
+        const menhelyek = await Menhely.find({ _id: { $in: felhasznalo.kedvencek } });
+
+        // Ha nincsenek kedvencek
+        if (!menhelyek.length) {
+            return res.status(404).json({ message: "Nincsenek kedvenc menhelyek" });
+        }
+
+        // Válasz küldése a menhelyek adataival
+        res.json({ kedvencek: menhelyek });
+    } catch (error) {
+        res.status(500).json({ message: "Hiba történt a lekérésnél", error });
+    }
+});
+
+
 router.post("/kedvencek", async (req, res) => {
     const { userId, ujKedvencek } = req.body;
 
@@ -82,7 +107,7 @@ router.post("/kedvencek", async (req, res) => {
 
 router.get('/:userid', async (req, res) => {
     try {
-        const user = await Felhasznalok.findOne({ _id: req.params.useryid });
+        const user = await Felhasznalok.findOne({ _id: req.params.userid });
         if (!user) {
             return res.status(404).json({ message: "Nem található ilyen felhasználó!" });
         }
@@ -91,5 +116,6 @@ router.get('/:userid', async (req, res) => {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
 });
+
 
 module.exports = router

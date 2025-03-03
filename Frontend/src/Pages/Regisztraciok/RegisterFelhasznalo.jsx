@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import '../../Styles/loginregister.css'
 import RegisterFelhasznaloForm from '../../Elements/RegisterFelhasznaloForm';
+import Header from '../../Elements/Header'
+
 
 const RegisterFelhasznalo = () => {
   return (
+    <>
+      <Header />
     <div className="container-fluid p-3">
        <h1 className="text-center">Regisztrálj hozzánk, mint örökbefogadó</h1>
        <br />
@@ -18,7 +22,8 @@ const RegisterFelhasznalo = () => {
                </div>   
            </div>
        </section>
-    </div>
+      </div>
+      </>
   )
 }
 

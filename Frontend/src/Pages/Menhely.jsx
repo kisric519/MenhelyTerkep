@@ -4,6 +4,8 @@ import axios from 'axios';
 import '../Styles/menhely.css';
 import EsemenyLista from '../Elements/EgyMenhelyEsemenyLista';
 import GaleriaLista from '../Elements/GaleriaLista';
+import Header from '../Elements/Header'
+import Footer from '../Elements/Footer'
 
 const Menhely = () => {
   const navigate = useNavigate();
@@ -32,6 +34,8 @@ const Menhely = () => {
   }
 
   return (
+    <>
+      <Header /> 
     <div className="container mt-4">
       <section className='main'>
         <div className="row align-items-center">
@@ -60,7 +64,9 @@ const Menhely = () => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+       <Footer />
+      </>
   );
 };
 
