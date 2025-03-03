@@ -16,7 +16,7 @@ function FormComponent() {
 
     e.preventDefault();
     try {
-      const response = await fetch(apiUrl+`/users/bejelentkezes`, {
+      const response = await fetch(apiUrl+`/users/belepes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -33,13 +33,14 @@ function FormComponent() {
 
       const data = await response.json();
 
-      if(data.msg = "Hibás email vagy jelszo"){
+      if (data.msg = "Hibás email vagy jelszo") {
         setMessage("Belső rendszer hiba!")
       }
       
-      if(data._id){
-        const id = await data._id
+      if(data.user._id){
+        const id = await data.user._id
         await localStorage.setItem('belepisadat', id);
+        await localStorage.setItem('fioktipus', "felhasznalo");
         navigate('/profilom');
       }  
     } catch (error) {

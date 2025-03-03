@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [shelterId, setShelterId] = useState(localStorage.getItem('belepisadat'));
+    const [fioktipus, setFioktipus] = useState(localStorage.getItem('fioktipus'));
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -13,8 +14,9 @@ const Navbar = () => {
     }, [location]);
 
     const handleLogout = () => {
-      localStorage.removeItem('belepisadat');
-      setShelterId(null);
+        localStorage.removeItem('belepisadat');
+        localStorage.removeItem('fioktipus');
+        setShelterId(null);
     };
 
     return (
@@ -32,9 +34,14 @@ const Navbar = () => {
                         <li className="nav-item"><Link className="nav-link" to="/rolunk">Rólunk</Link></li>
                     </ul>
                     <ul className="navbar-nav">
-                        {shelterId ? (
+                        {fioktipus === "menhely" ? (
                             <>
                                 <li className="nav-item"><Link className="nav-link regbutton" to="/admin">Profilom</Link></li>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="" onClick={handleLogout}>Kijelentkezés</Link></li>
+                            </>
+                        ) : fioktipus === "felhasznalo" ? (
+                            <>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="/profilom">Kedvenceim</Link></li>
                                 <li className="nav-item"><Link className="nav-link regbutton" to="" onClick={handleLogout}>Kijelentkezés</Link></li>
                             </>
                         ) : (

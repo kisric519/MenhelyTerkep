@@ -40,6 +40,7 @@ function FormComponent() {
       if(data._id){
         const id = await data._id
         await localStorage.setItem('belepisadat', id);
+        await localStorage.setItem('fioktipus', "menhely");
         navigate('/admin');
       }  
     } catch (error) {

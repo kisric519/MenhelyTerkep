@@ -7,7 +7,24 @@ import Betoltes from '../../Elements/Betoltes'
 
 const Profilom = () => {
     const navigate = useNavigate();
-    
+  const [activeTab, setActiveTab] = useState("kezdolap");
+  
+const [felhasznaloAdatok, setFelhasznaloAdatok] = useState(null);
+    const apiUrl = import.meta.env.VITE_API_URL;
+    useEffect(() => {
+      const fetchUser = async () => {
+      const userId = await localStorage.getItem('belepisadat');
+      if (!userId) {
+          navigate('/');
+      } else {
+        const response = await axios.get(`${apiUrl}/users/${userId}`);
+        console.log(response)
+        setFelhasznaloAdatok(response.data);
+      }
+    };
+    fetchUser();
+    }, []);
+
    return (
     <div className="p-6 max-w-4xl mx-auto">
         <div className="flex w-full p-2 rounded-lg space-x-2">
@@ -28,18 +45,18 @@ const Profilom = () => {
       </div>
 
       <div className="mt-4 p-4 rounded-lg bg-white">
-        {activeTab === "kezdolap" && <Kezdolap />}
+        {activeTab === "kezdolap" && <Kezdolap adatok={felhasznaloAdatok} />}
         {activeTab === "mentett" && <MentettMenhelyek />}
       </div>
     </div>
    )
  }
 
-const Kezdolap = ({  }) => (
+const Kezdolap = ({ adatok }) => (
     <div>
         <h2>Profilom</h2>
         <section>
-            
+            <p>Név: </p>
         </section>
     </div>
 );

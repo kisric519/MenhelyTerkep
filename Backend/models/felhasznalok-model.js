@@ -20,7 +20,8 @@ const FelhasznalokScheme = mongoose.Schema({
         type: String,
         default: "",
         required: true
-    }
+    },
+    kedvencek: { type: [String], default: [] }
 });
 
 module.exports = mongoose.model('Felhasznalok', FelhasznalokScheme);

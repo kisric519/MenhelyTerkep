@@ -19,7 +19,7 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/admin' element={<Admin/>} />
-         <Route path='/proflom' element={<Profilom/>} />
+         <Route path='/profilom' element={<Profilom/>} />
          <Route path='/rolunk' element={<About/>} />
          <Route path='/naptar' element={<Naptar/>} />
          <Route path='/menhelyek' element={<Menhelyek/>} />
