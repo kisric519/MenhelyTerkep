@@ -13,6 +13,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
         try {
           const response = await fetch(apiUrl + "/naptar/esemenyek");
           const data = await response.json();
+          console.log(data)
           setEsemenyek(data);
         } catch (error) {
           console.error("hiba:", error);

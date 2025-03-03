@@ -42,8 +42,8 @@ router.get('/esemenyek', async (req, res) => {
             const menhely = menhelyek.find(m => m._id.toString() === esemeny.menhelyId.toString());
             return {
                 ...esemeny.toObject(),
-                menhelyNev: menhely.menhelyneve,  // Menhely neve
-                menhelyLogo: menhely.logo,  // Menhely logó
+                menhelyneve: menhely.menhelyneve,  // Menhely neve
+                logo: menhely.logo,  // Menhely logó
             };
         });
 
@@ -94,8 +94,8 @@ router.get('/esemenyek/szures/:datum', async (req, res) => {
             const menhely = menhelyek.find(m => m._id.toString() === esemeny.menhelyId.toString());
             return {
                 ...esemeny.toObject(),
-                menhelyNev: menhely.menhelyneve,  // Menhely neve
-                menhelyLogo: menhely.logo,  // Menhely logó
+                menhelyneve: menhely.menhelyneve,  // Menhely neve
+                logo: menhely.logo,  // Menhely logó
             };
         });
 
