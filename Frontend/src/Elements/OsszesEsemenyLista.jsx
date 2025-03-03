@@ -40,7 +40,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
   }
 
   if (esemenyek.length === 0) {
-      return <p className="text-center text-gray-500">Nincsenek események ma..</p>;
+      return <p className="text-center text-gray-500">Nincsenek események ezen a napon...</p>;
   }
   
   const vagottSzoveg = (text, maxLength) => {

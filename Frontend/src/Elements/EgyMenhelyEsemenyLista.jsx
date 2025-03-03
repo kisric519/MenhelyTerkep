@@ -22,11 +22,11 @@ const MenhelyEsemenyLista = ({ menhelyid }) => {
     }, []);
     
     if (loading) {
-        return <p className="text-center text-gray-500">Betöltés...</p>;
+      return <p className="text-center text-gray-500">Betöltés...</p>;
     }
 
     if (esemenyek.length === 0) {
-        return <p className="text-center text-gray-500">Nincs még eseményed :c</p>;
+      return <p className="text-center text-gray-500">Nincs még esemény...</p>;
     }
   
     return (

@@ -24,18 +24,18 @@ const GaleriaLista = ({ onSuccess, menhelyid }) => {
   }, [onSuccess, menhelyid]);
     
     if (loading) {
-        return <Betoltes/>;
+      return <Betoltes/>;
     }
 
     if (kepek.length === 0) {
-        return <p className="text-center text-gray-500">Nincs még képed feltöltve :c</p>;
+      return <p className="text-center text-gray-500">A galéria üres...</p>;
     }
   
     return (
       <div className="listagaleria">
         {kepek.map((kep) => (
           <div key={kep.id} className="kepwp">
-            <img className="galeriakep" src={kep.kepurl} alt="" />
+            <img className="galeriakep" src={kep.kepurl} />
           </div>
         ))}
       </div>
