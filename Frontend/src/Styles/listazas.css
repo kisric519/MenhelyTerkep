@@ -62,6 +62,16 @@
    width: 25%;
    max-width: 150px;
 }
+.fooldallogo{
+   width: 20%;
+   min-height: 150px;
+   object-fit: contain;
+}
+.logomenhelyek{
+   width: 20%;
+   min-height: 150px;
+   object-fit: contain;
+}
 
 .galeriakep{
    width: 23%;

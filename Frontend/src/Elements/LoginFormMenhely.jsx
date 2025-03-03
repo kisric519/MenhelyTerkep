@@ -32,9 +32,16 @@ function FormComponent() {
       }
 
       const data = await response.json();
-      const id = await data._id
-      await localStorage.setItem('belepisadat', id);
-      navigate('/admin');
+      console.log(data)
+      if(data.msg = "Hibás email vagy jelszo"){
+        setMessage("Belső rendszer hiba!")
+      }
+      
+      if(data._id){
+        const id = await data._id
+        await localStorage.setItem('belepisadat', id);
+        navigate('/admin');
+      }  
     } catch (error) {
       console.error('Error:', error);
     }
@@ -65,16 +72,6 @@ function FormComponent() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </div>
-      <div className="form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        />
-        <label className="form-check-label" htmlFor="exampleCheck1">
-            Bejelentkezve maradok
-        </label>
       </div>
       <br />
       <button type="submit" className="btn btn-primary bg">

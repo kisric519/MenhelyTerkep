@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import OsszesEsemenyLista from '../Elements/OsszesEsemenyLista';
 
 const Naptar = () => {
-  const today = new Date().toISOString().split("T")[0];
-  const [selectedDate, setSelectedDate] = useState(today);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   return (
  <div className="container-fluid">

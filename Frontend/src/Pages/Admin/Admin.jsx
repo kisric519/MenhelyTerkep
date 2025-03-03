@@ -15,7 +15,7 @@ const Admin = () => {
     const [menhelyAdatok, setMenhelyAdatok] = useState(null);
     const apiUrl = import.meta.env.VITE_API_URL;
     useEffect(() => {
-    const fetchShelterData = async () => {
+      const fetchShelterData = async () => {
       const mentettMenhelyId = await localStorage.getItem('belepisadat');
       console.log(mentettMenhelyId)
       if (!mentettMenhelyId) {

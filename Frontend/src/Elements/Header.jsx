@@ -34,13 +34,13 @@ const Navbar = () => {
                     <ul className="navbar-nav">
                         {shelterId ? (
                             <>
-                                <li className="nav-item"><Link className="nav-link" to="/admin">Profilom</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="" onClick={handleLogout}>Kijelentkezés</Link></li>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="/admin">Profilom</Link></li>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="" onClick={handleLogout}>Kijelentkezés</Link></li>
                             </>
                         ) : (
                             <>
-                                <li className="nav-item"><Link className="nav-link" to="/regisztracio/menhely">Regisztráció</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/bejelentkezes/menhely">Bejelentkezés</Link></li>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="/regisztracio/menhely">Regisztráció</Link></li>
+                                <li className="nav-item"><Link className="nav-link regbutton" to="/bejelentkezes/menhely">Bejelentkezés</Link></li>
                             </>
                         )}
                     </ul>

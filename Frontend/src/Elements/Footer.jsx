@@ -5,10 +5,10 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="footer mt-5 p-4 bg-light">
+        <footer className="footer mt-5 p-5 bg-light">
         <div className="container">
-          <div className="row gap-3">
-            <div className="col-md-4 col-12 text-center text-md-start">
+          <div className="row gap-2">
+            <div className="col-md-3 col-12 text-center text-md-start">
               <h3>MenhelyTérkép</h3>
               <img className="footerlogo img-fluid" src={logo} alt="logo" />
             </div>

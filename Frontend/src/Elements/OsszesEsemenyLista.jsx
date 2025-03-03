@@ -43,7 +43,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
       return <p className="text-center text-gray-500">Nincsenek események ma..</p>;
   }
   
-  const truncateText = (text, maxLength) => {
+  const vagottSzoveg = (text, maxLength) => {
     if (text.length > maxLength) {
       return text.substring(0, maxLength) + "...";
     }
@@ -53,7 +53,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
   return (
     <div className="d-grid gap-3 grid-container">
   {esemenyek.map((esemeny) => (
-    <div key={esemeny.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 text-center">
+    <div key={esemeny.id} className="bg-white shadow-lg rounded-xl p-6 border border-gray-200 text-center p-1">
       <h2 className="text-xl font-bold text-gray-800 mb-2">{esemeny.esemenyneve}</h2>
       <p className="text-gray-600">
         {new Date(esemeny.datum).toLocaleDateString('hu-HU', {
@@ -62,7 +62,7 @@ const OsszesEsemenyLista = ({ kereses }) => {
           day: 'numeric',
         })}
       </p>
-      <p className="text-gray-600">{truncateText(esemeny.leiras, 70)}</p>
+      <p className="text-gray-600">{vagottSzoveg(esemeny.leiras, 70)}</p>
     </div>
   ))}
 </div>
