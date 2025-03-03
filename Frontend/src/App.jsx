@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //Oldalak listája
 import Home from './Pages/Home';
 import Admin from './Pages/Admin/admin';
+import Profilom from './Pages/Profilom/Profilom';
 import About from './Pages/About';
 import Menhely from './Pages/Menhely';
 import Menhelyek from './Pages/Menhelyek';
@@ -18,6 +19,7 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>} />
          <Route path='/admin' element={<Admin/>} />
+         <Route path='/proflom' element={<Profilom/>} />
          <Route path='/rolunk' element={<About/>} />
          <Route path='/naptar' element={<Naptar/>} />
          <Route path='/menhelyek' element={<Menhelyek/>} />
