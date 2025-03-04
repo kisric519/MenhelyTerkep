@@ -81,17 +81,29 @@ useEffect(() => {
         {menhelyAdatok ? (
           <div>
             <div>
-              Logód:
               {menhelyAdatok.logo && (
                 <img src={menhelyAdatok.logo} className="logo" />
               )}
             </div>
-            <p>Menhely Neve: {menhelyAdatok.menhelyneve}</p>
-            <p>Menhely Címe: {menhelyAdatok.menhelycime}</p>
-            <p>Menhely Weboldala: {menhelyAdatok.oldallink}</p>
-            <p>Menhely Leírása: {menhelyAdatok.leiras}</p>
-            <p>Menhely E-mail: {menhelyAdatok.email}</p>
-            <p>Menhely Telefonszám: {menhelyAdatok.telefonszam}</p>
+            <br />
+            <p>
+              <strong>Menhely Neve:</strong> {menhelyAdatok.menhelyneve}
+            </p>
+            <p>
+              <strong>Menhely Címe:</strong> {menhelyAdatok.menhelycime}
+            </p>
+            <p>
+              <strong>Menhely Weboldala:</strong> {menhelyAdatok.oldallink}
+            </p>
+            <p className="leiras">
+              <strong>Menhely Leírása:</strong> {menhelyAdatok.leiras}
+            </p>
+            <p>
+              <strong>Menhely E-mail:</strong> {menhelyAdatok.email}
+            </p>
+            <p>
+              <strong>Menhely Telefonszám:</strong> {menhelyAdatok.telefonszam}
+            </p>
           </div>
         ) : (
           <Betoltes />

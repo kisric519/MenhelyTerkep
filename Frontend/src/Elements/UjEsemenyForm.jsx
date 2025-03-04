@@ -60,7 +60,7 @@ function FormComponent({ onSuccess }) {
         <label htmlFor="exampleInputEmail1">Esemény neve</label>
         <input
           type="text"
-          className="form-control"
+          className="form-control bevitel"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder=""
@@ -72,7 +72,7 @@ function FormComponent({ onSuccess }) {
         <label htmlFor="exampleInputEmail1">Esemény leírása</label>
         <input
           type="text"
-          className="form-control"
+          className="form-control bevitel"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder=""
@@ -84,7 +84,7 @@ function FormComponent({ onSuccess }) {
         <label htmlFor="exampleInputEmail1">Esemény dátuma</label>
         <input
           id="startDate"
-          className="form-control"
+          className="form-control bevitel"
           type="date"
           value={datum}
           onChange={(e) => setDatum(e.target.value)}
