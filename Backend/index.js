@@ -45,10 +45,10 @@ httpServer.listen(port, () => {
   console.log(`Szerver fut a ${port} porton!`);
 });
 
-const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/fullchain.pem'),
-}, app);
-httpsServer.listen(445, () => {
-  console.log('---HTTPS gerinc szerver elerheto a 420 porton---');
-});
+//const httpsServer = https.createServer({
+//  key: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/privkey.pem'),
+//  cert: fs.readFileSync('/etc/letsencrypt/live/api.menhelyterkep.hu/fullchain.pem'),
+//}, app);
+//httpsServer.listen(445, () => {
+//  console.log('---HTTPS gerinc szerver elerheto a 420 porton---');
+//});

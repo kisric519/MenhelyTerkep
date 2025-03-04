@@ -39,7 +39,7 @@ function FormComponent({ onSuccess }) {
     }
 
     try {
-      const response = await fetch(apiUrl + "/menhely/szerkesztes/"+menhelyid, {
+      const response = await fetch(apiUrl + "/menhelyek/szerkesztes/"+menhelyid, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
