@@ -83,12 +83,17 @@ router.put('/szerkesztes/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const updateData = req.body;
+        console.log(updateData)
         
-        const updatedMenhely = await Menhely.findByIdAndUpdate(id, { $set: updateData }, { new: true });
-        
-        if (!updatedMenhely) {
-            return res.status(404).json({ message: 'Nem található a bejegyzés.' });
-        }
+        const updatedMenhely = await Menhely.updateOne(
+            { _id: id },
+            { $set: {
+                    menhelycime: updateData.menhelycime,
+                    leiras: updateData.menhelyleirasa,
+                    email: updateData.menhelyemail,
+                    telefonszam: updateData.menhelytel
+                } }
+        );        
         
         res.json(updatedMenhely);
     } catch (error) {
