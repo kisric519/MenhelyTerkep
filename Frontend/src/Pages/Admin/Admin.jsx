@@ -1,4 +1,5 @@
 import UjEsemeny from "../../Elements/UjEsemenyForm";
+import AdminSzerkesztes from "../../Elements/adminSzerkesztes"
 import GaleriaLista from "../../Elements/GaleriaLista";
 import EsemenyListazas from "../../Elements/MenhelyEsemenyLista";
 import { useState, useEffect, useRef } from "react";
@@ -64,36 +65,61 @@ const Admin = () => {
   );
 };
 
-const Kezdolap = ({ shelterData }) => (
-  <div>
-    <h2>Menhely adatai</h2>
-    <section>
-      {shelterData ? (
-        <div>
-          <div>
-            Logód:
-            {shelterData.logo && (
-              <img
-                src={shelterData.logo}
-                alt={`Logo of ${shelterData.menhelyneve}`}
-                className="logo"
-              />
-            )}
+const Kezdolap = ({ shelterData }) => {
+  const [szerkesztesAblak, setSzerkesztoAblak] = useState(false);
+  const [frissitesTrigger, setFrissitesTrigger] = useState(0);
+
+  const kezeldSikeresMentest = () => {
+    setSzerkesztoAblak(false);
+    setFrissitesTrigger((prev) => prev + 1);
+  };
+  return (
+    <div>
+      <h2>Menhely adatai</h2>
+      <section>
+        {shelterData ? (
+          <div className="">
+            <div>
+              Logód:
+              {shelterData.logo && (
+                <img src={shelterData.logo} className="logo" />
+              )}
+            </div>
+            <p>Menhely Neve: {shelterData.menhelyneve}</p>
+            <p>Menhely Címe: {shelterData.menhelycime}</p>
+            <p>Menhely Weboldala: {shelterData.oldallink}</p>
+            <p>Menhely Leírása: {shelterData.leiras}</p>
+            <p>Menhely E-mail: {shelterData.email}</p>
+            <p>Menhely Telefonszám: {shelterData.telefonszam}</p>
           </div>
-          <p>Menhely Neve: {shelterData.menhelyneve}</p>
-          <p>Menhely Címe: {shelterData.menhelycime}</p>
-          <p>Menhely Weboldala: {shelterData.oldallink}</p>
-          <p>Menhely Leírása: {shelterData.leiras}</p>
-          <p>Menhely E-mail: {shelterData.email}</p>
-          <p>Menhely Telefonszám: {shelterData.telefonszam}</p>
-        </div>
-      ) : (
-        <Betoltes />
-      )}
-      <button className="szerkesztesgomb">Adatok módosítása</button>
-    </section>
-  </div>
-);
+        ) : (
+          <Betoltes />
+        )}
+        <button
+          className="szerkesztesgomb"
+          onClick={() => setSzerkesztoAblak(true)}
+        >
+          Adatok módosítása
+        </button>
+      </section>
+      {szerkesztesAblak == true ? (
+        <section className="ujAblak">
+          <div className="tartalom">
+            <button
+              onClick={() => setSzerkesztoAblak(false)}
+              className="ujgomb"
+            >
+              Bezár
+            </button>
+            <div>
+              <AdminSzerkesztes onSuccess={() => kezeldSikeresMentest()} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+    </div>
+  );
+};
 
 const Esemenyek = () => {
   const [ujEsemenyAblak, setUjEsemenyAblak] = useState(false);

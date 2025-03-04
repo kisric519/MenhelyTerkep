@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "../Styles/listazas.css";
+import { Link } from "react-router-dom";
 
 const OsszesEsemenyLista = ({ kereses }) => {
   const [esemenyek, setEsemenyek] = useState([]);
@@ -78,6 +79,9 @@ const OsszesEsemenyLista = ({ kereses }) => {
             <strong>Menhely: {esemeny.menhelyneve}</strong>
           </p>
           <p className="text-gray-600">{vagottSzoveg(esemeny.leiras, 70)}</p>
+          <Link className="btn btn-dark" to={`/menhely/${esemeny.menhelyId}`}>
+            Olvass tovább a menhely oldalán
+          </Link>
         </div>
       ))}
     </div>

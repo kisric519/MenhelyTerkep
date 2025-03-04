@@ -78,4 +78,22 @@ router.post('/bejelentkezes', async (req, res) => {
     }
 });
 
+//Menhely adatok frissítése
+router.put('/szerkesztes/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        
+        const updatedMenhely = await Menhely.findByIdAndUpdate(id, updateData, { new: true });
+        
+        if (!updatedMenhely) {
+            return res.status(404).json({ message: 'Nem található a bejegyzés.' });
+        }
+        
+        res.json(updatedMenhely);
+    } catch (error) {
+        res.status(500).json({ message: 'Szerverhiba', error });
+    }
+});
+
 module.exports = router
