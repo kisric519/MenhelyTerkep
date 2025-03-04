@@ -15,7 +15,9 @@ const Menhelyek = () => {
           <div className="row align-items-center">
             <div className="col-md-6 col-12">
               <h1>Menhelyek</h1>
-              <p>Ismerd meg Magyarország állatmenhelyeit</p>
+              <p className="text-center">
+                Ismerd meg Magyarország állatmenhelyeit
+              </p>
             </div>
             <div className="col-md-6 col-12 text-center">
               <img src={menhelyoldalKep} alt="" className="img-fluid" />
