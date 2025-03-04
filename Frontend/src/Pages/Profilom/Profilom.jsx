@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../../Styles/admin.css";
 import { useNavigate } from "react-router-dom";
-import img from "../../assets/kezdolapKutya.jpg";
 import Betoltes from "../../Elements/Betoltes";
 import Header from "../../Elements/Header";
 import "../../Styles/listazas.css";
+import { Link } from "react-router-dom";
 
 const Profilom = () => {
   const navigate = useNavigate();
@@ -112,6 +112,9 @@ const MentettMenhelyek = () => {
               <h2 className="text-xl font-bold text-gray-800 mb-2">
                 {kedvenc.menhelyneve}
               </h2>
+              <Link className="btn btn-dark" to={`/menhely/${kedvenc._id}`}>
+                Részletek a menhelyről
+              </Link>
             </div>
           ))}
         </div>

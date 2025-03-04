@@ -27,7 +27,7 @@ router.post('/feltoltes', upload.single("image"), async (req, res) => {
   }
 });
 
-//Menhely galéria élekérdezése
+//Menhely galéria lekérdezése
 router.get('/galeria/:id', async (req, res) => {
     try {
         const menhelyid = req.params.id
@@ -36,6 +36,24 @@ router.get('/galeria/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
     }
+});
+
+// DELETE
+router.delete('/torles/:imageId', async (req, res) => {
+  const { imageId } = req.params;
+
+  try {
+    const image = await Kepek.findById(imageId);
+    if (!image) {
+      return res.status(404).json({ error: "A kép nem található!" });
+    }
+
+    await Kepek.findByIdAndDelete(imageId);
+
+    res.json({ message: "Kép törölve!" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 module.exports = router

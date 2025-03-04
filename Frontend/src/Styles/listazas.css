@@ -140,3 +140,34 @@
 .esemenylogo{
    max-width: 100px;
 }
+
+.kepwp {
+  position: relative;
+  display: inline-block;
+}
+
+.galeriakep {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.delete-button {
+  font-size: 16pt;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.927);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.kepwp:hover .delete-button {
+  opacity: 1;
+}

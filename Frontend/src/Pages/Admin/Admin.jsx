@@ -1,6 +1,6 @@
 import UjEsemeny from "../../Elements/UjEsemenyForm";
 import AdminSzerkesztes from "../../Elements/adminSzerkesztes"
-import GaleriaLista from "../../Elements/GaleriaLista";
+import GaleriaLista from "../../Elements/GaleriaListaAdmin";
 import EsemenyListazas from "../../Elements/MenhelyEsemenyLista";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
@@ -13,23 +13,6 @@ import Header from "../../Elements/Header";
 const Admin = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("kezdolap");
-  const [menhelyAdatok, setMenhelyAdatok] = useState(null);
-  const apiUrl = import.meta.env.VITE_API_URL;
-  useEffect(() => {
-    const fetchShelterData = async () => {
-      const mentettMenhelyId = await localStorage.getItem("belepisadat");
-      console.log(mentettMenhelyId);
-      if (!mentettMenhelyId) {
-        navigate("/");
-      } else {
-        const response = await axios.get(
-          `${apiUrl}/menhelyek/${mentettMenhelyId}`,
-        );
-        setMenhelyAdatok(response.data);
-      }
-    };
-    fetchShelterData();
-  }, []);
 
   return (
     <>
@@ -56,7 +39,9 @@ const Admin = () => {
         </div>
 
         <div className="mt-4 p-4 rounded-lg bg-white">
-          {activeTab === "kezdolap" && <Kezdolap shelterData={menhelyAdatok} />}
+          {activeTab === "kezdolap" && (
+            <Kezdolap />
+          )}
           {activeTab === "esemenyek" && <Esemenyek />}
           {activeTab === "galeria" && <Galeria />}
         </div>
@@ -65,9 +50,25 @@ const Admin = () => {
   );
 };
 
-const Kezdolap = ({ shelterData }) => {
+const Kezdolap = () => {
   const [szerkesztesAblak, setSzerkesztoAblak] = useState(false);
   const [frissitesTrigger, setFrissitesTrigger] = useState(0);
+const [menhelyAdatok, setMenhelyAdatok] = useState(null);
+const apiUrl = import.meta.env.VITE_API_URL;
+useEffect(() => {
+  const fetchShelterData = async () => {
+    const mentettMenhelyId = await localStorage.getItem("belepisadat");
+    if (!mentettMenhelyId) {
+      navigate("/");
+    } else {
+      const response = await axios.get(
+        `${apiUrl}/menhelyek/${mentettMenhelyId}`,
+      );
+      setMenhelyAdatok(response.data);
+    }
+  };
+  fetchShelterData();
+}, [frissitesTrigger]);
 
   const kezeldSikeresMentest = () => {
     setSzerkesztoAblak(false);
@@ -77,20 +78,20 @@ const Kezdolap = ({ shelterData }) => {
     <div>
       <h2>Menhely adatai</h2>
       <section>
-        {shelterData ? (
-          <div className="">
+        {menhelyAdatok ? (
+          <div>
             <div>
               Logód:
-              {shelterData.logo && (
-                <img src={shelterData.logo} className="logo" />
+              {menhelyAdatok.logo && (
+                <img src={menhelyAdatok.logo} className="logo" />
               )}
             </div>
-            <p>Menhely Neve: {shelterData.menhelyneve}</p>
-            <p>Menhely Címe: {shelterData.menhelycime}</p>
-            <p>Menhely Weboldala: {shelterData.oldallink}</p>
-            <p>Menhely Leírása: {shelterData.leiras}</p>
-            <p>Menhely E-mail: {shelterData.email}</p>
-            <p>Menhely Telefonszám: {shelterData.telefonszam}</p>
+            <p>Menhely Neve: {menhelyAdatok.menhelyneve}</p>
+            <p>Menhely Címe: {menhelyAdatok.menhelycime}</p>
+            <p>Menhely Weboldala: {menhelyAdatok.oldallink}</p>
+            <p>Menhely Leírása: {menhelyAdatok.leiras}</p>
+            <p>Menhely E-mail: {menhelyAdatok.email}</p>
+            <p>Menhely Telefonszám: {menhelyAdatok.telefonszam}</p>
           </div>
         ) : (
           <Betoltes />

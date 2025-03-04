@@ -63,7 +63,7 @@ const Navbar = () => {
               <>
                 <li className="nav-item">
                   <Link className="nav-link regbutton" to="/admin">
-                    Profilom
+                    Vezérlőpult
                   </Link>
                 </li>
                 <li className="nav-item">
