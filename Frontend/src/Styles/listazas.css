@@ -139,6 +139,9 @@
 
 .esemenylogo{
    max-width: 100px;
+   width: 90%;
+   min-height: 120px;
+   object-fit: contain;
 }
 
 .kepwp {

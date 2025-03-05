@@ -12,7 +12,7 @@ const MenhelyLista = () => {
       try {
         const response = await fetch(apiUrl + "/menhelyek/jovahagyott");
         const data = await response.json();
-        setMenhelyek(data.slice(0, 3));
+        setMenhelyek(data.slice(-3));
       } catch (error) {
         console.error("hiba:", error);
       } finally {

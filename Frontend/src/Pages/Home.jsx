@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import heroIMG from "../assets/kezdolapKutya.jpg";
 import "../Styles/home.css";
+import "../Styles/hero.css";
 import Menhelylista from "../Elements/MenhelyekListazasaFooldalon";
 import Header from "../Elements/Header";
 import Footer from "../Elements/Footer";
@@ -11,10 +12,15 @@ import ikonbeszed from "../assets/beszedikon.png";
 import ikonhaz from "../assets/hazikon.png";
 import ikonnagyito from "../assets/nagyitoikon.png";
 
+
 const Home = () => {
   return (
     <>
       <Header />
+      <div className="herofooldal">
+        <h1>MenhelyTérkép</h1>
+        <p className="text-center">Ahol minden menhely helyet kap</p>
+      </div>
       <main className="container mt-4">
         <section className="hero text-center text-md-start">
           <div className="row align-items-center">
@@ -37,7 +43,7 @@ const Home = () => {
             </div>
 
             <div className="col-md-6 col-12 text-center">
-              <img src={heroIMG} alt="" className="img-fluid" />
+              <img src={heroIMG} className="img-fluid rounded-3" />
             </div>
           </div>
         </section>
@@ -46,7 +52,7 @@ const Home = () => {
           <h2 className="text-center">Állatok megmentése</h2>
           <div className="row">
             <div className="col-md-6 col-12">
-              <p>
+              <p className="text-center">
                 Első lépésként látogass el a menhelyek listához, ahol
                 böngészheted a különböző menhelyeket. Minden menhelyről
                 részletes információ áll rendelkezésre. Az örökbefogadás nemcsak
@@ -59,7 +65,7 @@ const Home = () => {
               </p>
             </div>
             <div className="col-md-6 col-12">
-              <p>
+              <p className="text-center">
                 A menhelyek az állatok számára nem csupán átmeneti otthont
                 jelentenek, hanem az életük legfontosabb fordulópontját. Az
                 elhagyott, bántalmazott vagy súlyos körülmények között élő

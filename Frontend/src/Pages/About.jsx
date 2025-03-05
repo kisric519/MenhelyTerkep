@@ -5,11 +5,16 @@ import { Link } from "react-router-dom";
 import "../Styles/about.css";
 import oldalKepFent from "../assets/rolunkoldalCica.jpg";
 import oldalKepLent from "../assets/allyouneedCica.jpg";
+import "../Styles/hero.css";
 
 const About = () => {
   return (
     <main>
       <Header />
+      <div className="herorolunk">
+        <h1>Rólunk</h1>
+        <p className="text-center">Ismerd meg a projektünket</p>
+      </div>
       <section className="hero container mt-4">
         <div className="row">
           <div className="col-md-6 col-12 text-center text-md-start heroSzoveg">
@@ -30,7 +35,7 @@ const About = () => {
             </div>
           </div>
           <div className="col-md-6 col-12 text-center heroKep">
-            <img src={oldalKepFent} alt="" className="img-fluid" />
+            <img src={oldalKepFent} className="img-fluid rounded-3" />
           </div>
         </div>
       </section>
@@ -99,7 +104,7 @@ const About = () => {
       <section className="hero container mt-4">
         <div className="row align-items-center">
           <div className="col-md-6 col-12 text-center heroKep">
-            <img src={oldalKepLent} alt="" className="img-fluid" />
+            <img src={oldalKepLent} className="img-fluid rounded-3" />
           </div>
           <div className="col-md-6 col-12 text-center text-md-start heroSzoveg">
             <h1>Fogadj örökbe</h1>

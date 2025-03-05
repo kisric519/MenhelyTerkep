@@ -5,25 +5,17 @@ import "../Styles/menhelyek.css";
 import menhelyoldalKep from "../assets/menhelyoldalKutya.jpg";
 import Header from "../Elements/Header";
 import Footer from "../Elements/Footer";
+import "../Styles/hero.css";
 
 const Menhelyek = () => {
   return (
     <>
       <Header />
+      <div className="heromenhelyek">
+        <h1>Menhelyek</h1>
+        <p className="text-center">Ismerd meg Magyarország állatmenhelyeit</p>
+      </div>
       <main className="container mt-4">
-        <section className="hero text-center text-md-start">
-          <div className="row align-items-center">
-            <div className="col-md-6 col-12">
-              <h1>Menhelyek</h1>
-              <p className="text-center">
-                Ismerd meg Magyarország állatmenhelyeit
-              </p>
-            </div>
-            <div className="col-md-6 col-12 text-center">
-              <img src={menhelyoldalKep} alt="" className="img-fluid" />
-            </div>
-          </div>
-        </section>
         <section className="menhelylista mt-5">
           <div>
             <MenhelyekLista />

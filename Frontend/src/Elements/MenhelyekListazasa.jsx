@@ -130,7 +130,6 @@ const MenhelyCard = ({ menhely, kedvencek, setKedvencek }) => {
       {menhely.logo && (
         <img
           src={menhely.logo}
-          alt={`Logo of ${menhely.menhelyneve}`}
           className="logo logomenhelyek"
         />
       )}

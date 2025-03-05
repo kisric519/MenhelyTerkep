@@ -13,6 +13,7 @@ const Naptar = () => {
       <Header />
       <div className="heronaptar">
         <h1>Események</h1>
+        <p className="text-center">Találj számodra megfelelő eseményeket</p>
       </div>
       <div className="container-fluid">
         <div className="row mt-5 mb-5">
@@ -34,6 +35,7 @@ const Naptar = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

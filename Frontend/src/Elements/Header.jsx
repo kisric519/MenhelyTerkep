@@ -22,6 +22,7 @@ const Navbar = () => {
     setShelterId(null);
     setFioktipus(null);
     navigate("/");
+    window.location.reload();
   };
 
   return (
