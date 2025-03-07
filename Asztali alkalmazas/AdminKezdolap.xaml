@@ -18,9 +18,9 @@
                     <GridView>
                         <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
-                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="200"/>
+                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="150"/>
                         <GridViewColumn Header="Helyszín" DisplayMemberBinding="{Binding MenhelyCime}" Width="200"/>
-                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="200"/>
+                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="150"/>
                         <GridViewColumn Header="Leírás" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -42,15 +42,15 @@
                 </ListView.View>
             </ListView>
 
-            <TextBlock TextWrapping="Wrap" Text="Aktív menhelyek:" FontSize="20" FontWeight="Bold"/>
+            <TextBlock TextWrapping="Wrap" Text="Aktív menhelyek:" FontSize="20" FontWeight="Bold" Margin="0,30,0,0"/>
             <ListView Name="aktivShelterListView" ItemsSource="{Binding}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
-                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="200"/>
+                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="150"/>
                         <GridViewColumn Header="Helyszín" DisplayMemberBinding="{Binding MenhelyCime}" Width="200"/>
-                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="200"/>
+                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="150"/>
                         <GridViewColumn Header="Leírás" Width="200">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -74,4 +74,5 @@
 
         </StackPanel>
     </Grid>
+    </ScrollViewer>
 </Window>
