@@ -1,0 +1,77 @@
+﻿<Window x:Class="MenhelyTerkepAdmin.AdminKezdolap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenhelyTerkepAdmin"
+        mc:Ignorable="d"
+        Title="Admin - Föggő menhelyek listája"
+        WindowState="Maximized"
+        Icon="logo.png"
+        >
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+    <Grid>
+        <StackPanel x:Name="MainContentPanel">
+            <TextBlock TextWrapping="Wrap" Text="Függő menhelyek:" FontSize="20" FontWeight="Bold"/>
+            <ListView Name="shelterListView" ItemsSource="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
+                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="200"/>
+                        <GridViewColumn Header="Helyszín" DisplayMemberBinding="{Binding MenhelyCime}" Width="200"/>
+                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="200"/>
+                        <GridViewColumn Header="Leírás" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Leiras}" TextWrapping="Wrap" Width="200"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Műveletek">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Jóváhagyás" Click="Jovahagyas_Click" Tag="{Binding Id}" Margin="5"/>
+                                        <Button Content="Törlés" Click="Torles_Click" Tag="{Binding Id}" Margin="5"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <TextBlock TextWrapping="Wrap" Text="Aktív menhelyek:" FontSize="20" FontWeight="Bold"/>
+            <ListView Name="aktivShelterListView" ItemsSource="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
+                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="200"/>
+                        <GridViewColumn Header="Helyszín" DisplayMemberBinding="{Binding MenhelyCime}" Width="200"/>
+                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="200"/>
+                        <GridViewColumn Header="Leírás" Width="200">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Leiras}" TextWrapping="Wrap" Width="200"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Műveletek">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Törlés" Click="Torles_Click" Tag="{Binding Id}" Margin="5"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Összes lista frissítése" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Padding="10,5" Click="Ujratoltes"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

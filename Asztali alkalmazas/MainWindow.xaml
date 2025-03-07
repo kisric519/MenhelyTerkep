@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenhelyTerkepAdmin"
         mc:Ignorable="d"
-        Title="MenhelyTérkép ADMIN" Height="800" Width="1600"
+        Title="MenhelyTérkép ADMIN" Height="450" Width="800"
         Icon="logo.png"
         >
     <Grid>
@@ -18,34 +18,6 @@
 
             <Button Content="Bejelentkezés" Click="Login_Click" Margin="0,20,0,0" Height="40"/>
             <TextBlock x:Name="MessageTextBlock" Foreground="Red" Margin="0,10,0,0"/>
-        </StackPanel>
-
-        <StackPanel x:Name="MainContentPanel" Visibility="Collapsed">
-            <ListView Name="shelterListView" ItemsSource="{Binding}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="100"/>
-                        <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
-                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
-                        <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="200"/>
-                        <GridViewColumn Header="Helyszín" DisplayMemberBinding="{Binding MenhelyCime}" Width="200"/>
-                        <GridViewColumn Header="Oldal" DisplayMemberBinding="{Binding OldalLink}" Width="200"/>
-                        <GridViewColumn Header="Leírás" DisplayMemberBinding="{Binding Leiras}" Width="300"/>
-                        <GridViewColumn Header="Műveletek">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Content="Jóváhagyás" Click="Jovahagyas_Click" Tag="{Binding Id}" Margin="5"/>
-                                        <Button Content="Törlés" Click="Torles_Click" Tag="{Binding Id}" Margin="5"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-
-            <Button Content="Frissítés" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Padding="10,5" Click="Ujratoltes"/>
         </StackPanel>
     </Grid>
 </Window>
