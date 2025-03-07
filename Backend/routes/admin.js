@@ -53,6 +53,25 @@ router.get('/jovahagyatlanok', async (req, res) => {
     }
 });
 
+//Összes jóváhagyott menhely lekérdezése
+router.get('/jovahagyott', async (req, res) => {
+    try {
+        const jovahagyatlanokMenhelyek = await Menhely.find({ jovahagyva: true });
+
+        const rendezettMenhelyek = jovahagyatlanokMenhelyek.map(shelter => {
+            return {
+                id: shelter._id.toString(),
+                ...shelter.toObject(),
+                _id: undefined, 
+            };
+        });
+
+        res.json(rendezettMenhelyek);
+    } catch (err) {
+        res.status(500).json({ message: "Hiba történt a lekérdezés során!", error: err.message });
+    }
+});
+
 //ADMIN fiók bejelntkezes
 router.post('/bejelentkezes', async (req, res) => {
     const adatok = req.body;

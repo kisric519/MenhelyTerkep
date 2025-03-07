@@ -15,7 +15,7 @@
             <TextBlock TextWrapping="Wrap" Text="Függő menhelyek:" FontSize="20" FontWeight="Bold"/>
             <ListView Name="shelterListView" ItemsSource="{Binding}">
                 <ListView.View>
-                    <GridView>
+                   <GridView>
                         <GridViewColumn Header="Név" DisplayMemberBinding="{Binding MenhelyNeve}" Width="150"/>
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="200"/>
                         <GridViewColumn Header="Telefonszám" DisplayMemberBinding="{Binding Telefonszam}" Width="150"/>
@@ -62,7 +62,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Button Content="Törlés" Click="Torles_Click" Tag="{Binding Id}" Margin="5"/>
+                                            <Button Content="Törlés" Click="Aktiv_Torles_Click" Tag="{Binding Id}" Margin="5"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>

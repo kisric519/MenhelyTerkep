@@ -65,7 +65,7 @@ namespace MenhelyTerkepAdmin
 		{
 			try
 			{
-				HttpResponseMessage response = await _httpClient.GetAsync($"{_apiUrl}/menhelyek/jovahagyott");
+				HttpResponseMessage response = await _httpClient.GetAsync($"{_apiUrl}/admin/jovahagyott");
 
 				if (response.IsSuccessStatusCode)
 				{
@@ -110,6 +110,17 @@ namespace MenhelyTerkepAdmin
 			}
 		}
 
+		private async void Aktiv_Torles_Click(object sender, RoutedEventArgs e)
+		{
+			var button = sender as Button;
+			string shelterId = button?.Tag as string;
+
+			if (!string.IsNullOrEmpty(shelterId))
+			{
+				await SendDelRequestAsync($"{_apiUrl}/admin/menhelyek/torles/" + shelterId);
+			}
+		}
+
 
 		private async Task SendPutRequestAsync(string endpoint)
 		{
@@ -118,6 +129,7 @@ namespace MenhelyTerkepAdmin
 			if (response.IsSuccessStatusCode)
 			{
 				MenhelyekBetoltese();
+				JovahagyottMenhelyekBetoltese();
 			}
 			else
 			{
@@ -132,6 +144,7 @@ namespace MenhelyTerkepAdmin
 			if (response.IsSuccessStatusCode)
 			{
 				MenhelyekBetoltese();
+				JovahagyottMenhelyekBetoltese();
 			}
 			else
 			{
