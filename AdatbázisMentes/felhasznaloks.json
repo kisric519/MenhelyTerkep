@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "67c5856c8f6a8616c34eda51"
+  },
+  "nev": "Kis Richárd",
+  "email": "krichard001@icloud.com",
+  "telefonszam": "06205622510",
+  "jelszo": "$2b$10$ksn/nK4V7v63olyHy7oDXuMPq/16jqnuvzfjTcfs5mAy0fvGCNRuC",
+  "__v": 13,
+  "kedvencek": [
+    "67c578ac8f6a8616c34ed9b8",
+    "67a09f4d8f928c5100e0b5dd",
+    "67c57d9a8f6a8616c34ed9ea"
+  ]
+},{
+  "_id": {
+    "$oid": "67c8093b24e1df3d99286520"
+  },
+  "nev": "Tündi",
+  "email": "vartun583@hengersor.hu",
+  "telefonszam": "06308883342",
+  "jelszo": "$2b$10$.88U7RkfarqMqgcofypoAucvwb47yLBdLJFlepTFVDlUt.EBWOOfO",
+  "kedvencek": [
+    "67c577bb8f6a8616c34ed9b1",
+    "67c578ac8f6a8616c34ed9b8",
+    "67c57f588f6a8616c34ed9f0"
+  ],
+  "__v": 3
+}]

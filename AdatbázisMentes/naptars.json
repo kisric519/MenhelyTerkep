@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "67c5aa57e218fd471752ba57"
+  },
+  "menhelyId": "67c577bb8f6a8616c34ed9b1",
+  "esemenyneve": "Örökbefogadási Nap",
+  "datum": {
+    "$date": "2025-06-17T00:00:00.000Z"
+  },
+  "leiras": "Egy nyílt nap, ahol a potenciális örökbefogadók személyesen találkozhatnak az állatokkal, és megismerkedhetnek a menhely mindennapjaival. A rendezvény célja, hogy minél több állat találjon szerető gazdira, miközben a közönség jobban megismeri a menhelyi munkát.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c75524e1df3d99286444"
+  },
+  "menhelyId": "67c577bb8f6a8616c34ed9b1",
+  "esemenyneve": "Jótékonysági Futás a Kutyákkal",
+  "datum": {
+    "$date": "2025-06-29T00:00:00.000Z"
+  },
+  "leiras": "Egy közösségi futóesemény, ahol a résztvevők kutyáikkal együtt teljesíthetnek különböző távokat. Az esemény bevételét a menhelyek javára fordítják, és egy remek lehetőség a kutyás közösség számára, hogy együtt mozogjanak és támogassák az állatokat.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c80b24e1df3d99286452"
+  },
+  "menhelyId": "67c6c2c224e1df3d99286425",
+  "esemenyneve": "Kutyás Játékfesztivál",
+  "datum": {
+    "$date": "2025-07-22T00:00:00.000Z"
+  },
+  "leiras": "Egy szórakoztató rendezvény, ahol kutyák és gazdáik különböző játékos kihívásokban vehetnek részt, mint például akadálypálya, kutyás ügyességi versenyek és szépségversenyek. Az esemény célja a közönség szórakoztatása és az örökbefogadás népszerűsítése.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c85624e1df3d9928645b"
+  },
+  "menhelyId": "67c6c17f24e1df3d99286420",
+  "esemenyneve": "Állatok Éjszakája",
+  "datum": {
+    "$date": "2025-08-11T00:00:00.000Z"
+  },
+  "leiras": "Egy éjszakai rendezvény, ahol az érdeklődők éjszakai állatkerti sétán vagy menhelyi túrán vehetnek részt, miközben a menhelyek munkatársai és önkéntesei mesélnek az állatokról. A program célja, hogy a látogatók különleges élményeket szerezzenek, és közben támogassák az állatvédelmi munkát.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c8b324e1df3d99286479"
+  },
+  "menhelyId": "67c6c17f24e1df3d99286420",
+  "esemenyneve": "Kutyás Barátság Napi Piknik",
+  "datum": {
+    "$date": "2025-08-02T00:00:00.000Z"
+  },
+  "leiras": "Egy kutyás piknik, ahol a gazdik kutyáikkal közösen élvezhetik a természetet, miközben játékos programok és versenyek várják őket. Az esemény célja a kutyás közösség építése és adománygyűjtés az állatmenhely számára.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c90d24e1df3d9928648a"
+  },
+  "menhelyId": "67c57f588f6a8616c34ed9f0",
+  "esemenyneve": "Képzőművészeti Alkotónap",
+  "datum": {
+    "$date": "2025-06-26T00:00:00.000Z"
+  },
+  "leiras": "Egy workshop, ahol a résztvevők állatvédelmi témájú műalkotásokat készíthetnek, mint például festményeket, szobrokat vagy fényképeket. Az elkészült műalkotásokat aukcióra bocsátják, hogy támogassák a menhelyünk munkáját.",
+  "__v": 0
+}]

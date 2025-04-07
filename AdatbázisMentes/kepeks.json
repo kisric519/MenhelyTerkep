@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "67a1c525884670fc7fa32ce3"
+  },
+  "menhelyId": "67a09f4d8f928c5100e0b5dd",
+  "kepurl": "https://d2fykxt9kl8eq7.cloudfront.net/1738655012568-menhelyoldalKutya.jpg",
+  "tipus": "galeria",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67a1c5d9884670fc7fa32cef"
+  },
+  "menhelyId": "67a09f4d8f928c5100e0b5dd",
+  "kepurl": "https://d2fykxt9kl8eq7.cloudfront.net/1738655191878-allyouneedCica.jpg",
+  "tipus": "galeria",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67a1c5f5884670fc7fa32cf2"
+  },
+  "menhelyId": "67a09f4d8f928c5100e0b5dd",
+  "kepurl": "https://d2fykxt9kl8eq7.cloudfront.net/1738655219532-rolunkoldalCica.jpg",
+  "tipus": "galeria",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67a1c77a884670fc7fa32d15"
+  },
+  "menhelyId": "67a09f4d8f928c5100e0b5dd",
+  "kepurl": "https://d2fykxt9kl8eq7.cloudfront.net/1738655609403-kezdolapKutya.jpg",
+  "tipus": "galeria",
+  "__v": 0
+}]

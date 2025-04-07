@@ -1,0 +1,127 @@
+[{
+  "_id": {
+    "$oid": "67a09f4d8f928c5100e0b5dd"
+  },
+  "menhelyneve": "Menhely az Állatokért Alapítvány",
+  "email": "info@menhely.eu",
+  "telefonszam": "06701982726",
+  "jelszo": "$2b$10$OCeQ8XYnvgfAHTJ0vTXPSusnPIEriBXvgXVkOIDWmHduJqkNZTevO",
+  "menhelycime": "6000 Kecskemét, Petőfi S. u. 1/B",
+  "oldallink": "https://menhely.eu",
+  "leiras": "2006. decemberében jött létre alapítványunk. Folyamatosan fejlődtünk, terjeszkedtünk, jelenleg közel 1 HA terülten laknak kutyusaink, 300-400-as állománnyal dolgozunk. Évente közel 1200 állat kerül be hozzánk. Ennek egy részét hazaviszi a gazda, a többi kutyának nagy gondossággal keresünk új családot. Kollégáim az ebrendészeti feladatot jelenleg 6 településen látják el: Kecskemét, Nagykőrös, Helvécia, Városföld, Csemő, Orgovány. ",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1738579789061-logo_light.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c577bb8f6a8616c34ed9b1"
+  },
+  "menhelyneve": "Vigyél Haza",
+  "email": "info@vigyelhaza.hu",
+  "telefonszam": "06 20 934 486",
+  "jelszo": "$2b$10$sPS/J9VcpydDUz0YLGpYNuW13VPog7n8.ZfCJOprT0iBUccyAjMWe",
+  "menhelycime": "Budapest, 1174 Ady Endre utca 12",
+  "oldallink": "https://vigyelhaza.hu",
+  "leiras": "Alapítványunk már 14 éve dolgozik az árva, sérült kutyák gyógyításáért, örökbefogadás esélyeinek növeléséért, gazdához juttatásáért.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1740994490430-logo.gif",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c578ac8f6a8616c34ed9b8"
+  },
+  "menhelyneve": "Tappancs Állatvédő Alapítvány",
+  "email": "info@tappancs.hu",
+  "telefonszam": "06301983412",
+  "jelszo": "$2b$10$bTEqrXqIrUYfUV7q2RmkLOyiEnFOA5noxC1CIRqKNzZGMejiNgp2W",
+  "menhelycime": "6706 Szeged Tanposta, Pf. 52.",
+  "oldallink": "tappancs.hu",
+  "leiras": "Mi a Tappancsnál hiszünk abban, hogy eljön az az idő, amikor már nem lesz szükség állatmenhelyekre, mert minden kedvtelésből tartott állat egész életét szerető családban töltheti.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1740994732190-logo-2.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c579468f6a8616c34ed9be"
+  },
+  "menhelyneve": "Lelenc Kutyamentő Egyesület",
+  "email": "info@lelenc.hu",
+  "telefonszam": "+36 30 970 6526",
+  "jelszo": "$2b$10$oUzoTmDfUj8qJtHSNny4FuYz3xW54kDIl5GEGANRaUVoJRfA0xeR6",
+  "menhelycime": "2112 Veresegyház, Mátra u.3.",
+  "oldallink": "lelenc.hu",
+  "leiras": "Még az ősidőkben szembesültünk azzal, hogy mennyi, mennyi állatka hal meg kínok között kidobva, sintértelepen. És maroknyian fejünkbe vettük, hogy segítünk rajtuk.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1740994886396-lgk1297.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c57d9a8f6a8616c34ed9ea"
+  },
+  "menhelyneve": "Szent Ferenc Állatotthon",
+  "email": "info@szentferencallatotthon.hu",
+  "telefonszam": "06 20 340 4274",
+  "jelszo": "$2b$10$mu9//hyxTsPkwWmQDW2STu2KYuPCWpTj06dqL.2QfV4lkbv8b9ea2",
+  "menhelycime": "Ócsa, 2364 Újerdő utca 33",
+  "oldallink": "https://szentferenc.hu",
+  "leiras": "Küldetésünk 1995 óta az elhagyatott, sérült állatok rehabilitálása, gondozása és örökbeadása. Évente több, mint 200 állat kerül hozzánk, és közel 150-en találnak végleges otthonra!",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1740995994132-logo_nagy.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c57f588f6a8616c34ed9f0"
+  },
+  "menhelyneve": "Budaörsi Állatmenhely",
+  "email": "info@budaorsiallatmenhely.hu",
+  "telefonszam": "06 70 601 6700",
+  "jelszo": "$2b$10$3wcmGLv2AWt7lvuRqYQn5uOLpEmp12rHtYPFW5CUlRCCgClTKUc5e",
+  "menhelycime": "Budaörs, 2040 Lévai utca 34.",
+  "oldallink": "https://budaorsiallatmenhely.hu",
+  "leiras": "A Budaörsi Állatmenhely otthont biztosít számos kutyáknak és macskáknak, akik ideiglenesen vagy véglegesen elveszítették korábbi gazdáikat. Az állatmenhely elkötelezett abban, hogy gondoskodjon, szeretetet nyújtson és megfelelő ellátást biztosítson az itt élő állatoknak.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1740996440052-images.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c17f24e1df3d99286420"
+  },
+  "menhelyneve": "Noé Állatotthon",
+  "email": "info@noeallatotthon.hu",
+  "telefonszam": "06 30 221 1299",
+  "jelszo": "$2b$10$SWmU91XZAc9.KUmLdt61..kc4sRlAXExRqMr35io3PY7VnCA.jab2",
+  "menhelycime": "Budapest, 1171 Csordakút út",
+  "oldallink": "http://www.noeallatotthon.hu/",
+  "leiras": "Budapest legnagyobb állatotthonaként 1992 óta végezzük a bajba jutott, megkínzott, balesetet szenvedett állatok mentését. 3,5 hektáros, 2009. évtől majdnem 8 hektáros állatmenhelyünk jelenleg közel ezer kutya, cica, malac, kecske, juh, strucc, nyuszi, tengerimalac, csirke, kacsa, liba, páva, vaddisznó, mosómedve, ormányos medve, borz, ló, póni, szamár, láma, díszmadár, galamb, varjú, teknős, és szarvasmarha átmeneti, vagy - sok esetben - végleges otthona.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1741078910640-logo.gif",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c2c224e1df3d99286425"
+  },
+  "menhelyneve": "Fogadj Örökbe Alapítvány",
+  "email": "info@fogadjorokbealapitvany.hu",
+  "telefonszam": "06 20 456 2236",
+  "jelszo": "$2b$10$DXYPZRH4rKHxBy9ziqjBxeQjE7qGGj1EP2.4YhFxCJZQcpVwP2eZC",
+  "menhelycime": "Budaörs, 2040 Esze Tamás utca 11/2",
+  "oldallink": "https://fogadjorokbe.com",
+  "leiras": "2014. óta működünk és már több mint ezer kutyusnak adtunk egy új életet.\r\nTöbb szervezetnek örökbeadásában részt veszünk, civil emberek állatvédelmi tevékenységét támogatjuk, de legfőképpen az ukrán, román határmentén. A hozzánk befutó magánkérések sokaságának segítünk, posztoljuk és örökbe is adjuk a kutyusokat, cicákat. Célunk, hogy minél több kutyus és cicus gazdagítása a nekik legmegfelelőbb helyre. Továbbá szeretnénk, ha az addig a menhelyen eltöltött idejük a lehető leggyorsabb és legkellemesebb legyen.",
+  "jovahagyva": true,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1741079231247-logofogadjorokbe.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "67c6c51e24e1df3d9928642b"
+  },
+  "menhelyneve": "Safi Cicamenedék",
+  "email": "info@saficicamenedek.hu",
+  "telefonszam": "06 30 456 5578",
+  "jelszo": "$2b$10$TPjmRRD1s1YTw2Ztad8EbOoHFWZ/QxzjFA98a6WkSFnRyK7qKe68a",
+  "menhelycime": "Nagytarcsa, 2142 Honfoglalás utca 33",
+  "oldallink": "https://saficica.hu",
+  "leiras": "A Safi Cicamenedék Alapítványt a cicák megsegítésére hoztuk létre. A segítés részünkről abban áll, hogy egyrészt a gazdátlan, kolóniákban élő macskákat ivartalaníttatjuk. Másrészt olyan rászoruló cicagazdik macskáit segítjük az ivartalanításhoz, ahol pusztán anyagi oka van a műtét elvégzésének viszont ezeknek a cicagazdiknak a macskái olyan lakossági gócpontokat jelentenek az adott környéken, amelyek évről- évre ontják ki a nem kívánt szaporulatot az utcára, ezért ez ellen tenni kell és mi teszünk is! Az alapítvány Nagytarcsán található, így annak vonzáskörzetében, azaz Kistarcsán, Kerepesen, Budapest, XVI., XVII. kerületben végezzük főként alapítványi tevékenységet.",
+  "jovahagyva": false,
+  "logo": "https://d2fykxt9kl8eq7.cloudfront.net/1741079838399-logosaficica.jpg",
+  "__v": 0
+}]
