@@ -48,7 +48,7 @@ const MenhelyLista = () => {
           {menhely.logo && (
             <img
               src={menhely.logo}
-              alt={`Logo of ${menhely.menhelyneve}`}
+              alt={`${menhely.menhelyneve}`}
               className="logo fooldallogo"
             />
           )}

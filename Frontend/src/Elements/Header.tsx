@@ -4,9 +4,6 @@ import "../Styles/header.css";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [shelterId, setShelterId] = useState(
-    localStorage.getItem("belepisadat"),
-  );
   const [fioktipus, setFioktipus] = useState(localStorage.getItem("fioktipus"));
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -19,7 +16,6 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("belepisadat");
     localStorage.removeItem("fioktipus");
-    setShelterId(null);
     setFioktipus(null);
     navigate("/");
     window.location.reload();
