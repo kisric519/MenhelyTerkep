@@ -76,3 +76,5 @@ C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\M
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\MenhelyTerkepAdmin.csproj.CopyComplete
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\AdminKezdolap.g.cs
 C:\Users\kisric519\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\AdminKezdolap.baml
+C:\Users\pc\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\AdminKezdolap.g.cs
+C:\Users\pc\Documents\GitHub\MenhelyTerkep\Asztali alkalmazas\obj\Debug\AdminKezdolap.baml

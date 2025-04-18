@@ -1,1 +1,0 @@
-Telepítő helye
